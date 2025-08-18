@@ -33,11 +33,13 @@
   Filosofía: Orgánico, solar, táctil
   Inspiración: Letreros pintados a mano, texturas oaxaqueñas, calidez costera
   
-  PALETA DE COLORES:
-  - Fondo principal: #FBFFEE (casi blanco, papel artesanal)
+  PALETA DE COLORES OFICIAL:
+  - Fondo principal: #FBFFEE (crema artesanal)
   - Texto principal: #732621 (marrón oscuro, tierra)
   - Acento primario: #DB633E (terracota, acción)
-  - Acentos solares: #FFF796 (amarillo), #3D5EA6 (azul)
+  - Acento amarillo: #FFF796 (amarillo solar)
+  - Acento azul: #3D5EA6 (azul océano)
+  - Negro: #000000 (contraste)
   - Texto muted: #C4C4C4 (gris suave)
 */
 
@@ -50,22 +52,18 @@
 }
 
 @theme inline {
-  /* Colores principales */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Colores principales - PALETA OFICIAL */
+  --color-background: #FBFFEE;
+  --color-foreground: #732621;
   --color-pe-bg: #FBFFEE;
   --color-pe-text-dark: #732621;
   --color-pe-accent: #DB633E;
   --color-pe-accent-yellow: #FFF796;
   --color-pe-accent-blue: #3D5EA6;
+  --color-pe-black: #000000;
   --color-pe-text-muted: #C4C4C4;
   
-  /* Nuevos colores basados en las imágenes */
-  --color-pe-cream: #F5F0E8;
-  --color-pe-accent-dark: #8B3429;
-  --color-pe-brown: #5D2B1F;
-  
-  /* Variaciones artesanales */
+  /* Variaciones basadas en la paleta oficial */
   --color-pe-accent-hover: #c95736;
   --color-pe-accent-light: rgba(219, 99, 62, 0.1);
   --color-pe-shadow: rgba(115, 38, 33, 0.15);
@@ -121,7 +119,9 @@ input, textarea, select, button {
 .btn-primary {
   font-family: var(--font-kade-medium);
   font-weight: 500;
-  @apply inline-flex items-center justify-center bg-pe-accent text-pe-bg px-8 py-4 tracking-wide uppercase text-sm;
+  @apply inline-flex items-center justify-center px-8 py-4 tracking-wide uppercase text-sm;
+  background-color: var(--color-pe-accent);
+  color: var(--color-pe-bg);
   border-radius: 4px;
   box-shadow: 0 4px 12px var(--color-pe-shadow);
   transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -129,7 +129,7 @@ input, textarea, select, button {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-pe-accent-hover);
+  background-color: var(--color-pe-text-dark);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px var(--color-pe-shadow);
 }
@@ -200,7 +200,8 @@ input, textarea, select, button {
 .nav-link {
   font-family: var(--font-kade-medium);
   font-weight: 500;
-  @apply relative text-pe-text-dark;
+  @apply relative;
+  color: var(--color-pe-text-dark);
   transition: color 300ms ease-out;
 }
 
@@ -228,7 +229,8 @@ input, textarea, select, button {
    =============================================== */
 
 .form-field {
-  @apply w-full bg-transparent px-0 py-3 text-pe-text-dark;
+  @apply w-full bg-transparent px-0 py-3;
+  color: var(--color-pe-text-dark);
   border: none;
   border-bottom: 1px solid var(--color-pe-text-muted);
   outline: none;
@@ -247,7 +249,8 @@ input, textarea, select, button {
   font-family: var(--font-kade-medium);
   font-weight: 500;
   @apply block text-sm mb-2 uppercase tracking-wide;
-  color: rgba(115, 38, 33, 0.8);
+  color: var(--color-pe-text-dark);
+  opacity: 0.8;
 }
 
 /* ===============================================
@@ -283,6 +286,7 @@ input, textarea, select, button {
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
+  white-space: nowrap;
 }
 
 /* Tagline grande - Solo Kade */
@@ -338,15 +342,18 @@ input, textarea, select, button {
 .btn-outline {
   font-family: var(--font-kade-medium);
   font-weight: 500;
-  @apply inline-flex items-center justify-center border-2 border-pe-accent-dark text-pe-accent-dark px-8 py-3 tracking-wide uppercase text-sm;
+  @apply inline-flex items-center justify-center px-8 py-3 tracking-wide uppercase text-sm;
+  border: 2px solid var(--color-pe-text-dark);
+  color: var(--color-pe-text-dark);
+  background-color: transparent;
   border-radius: 50px;
   transition: all 300ms ease-out;
   letter-spacing: 0.05em;
 }
 
 .btn-outline:hover {
-  background-color: var(--color-pe-accent-dark);
-  color: var(--color-pe-cream);
+  background-color: var(--color-pe-text-dark);
+  color: var(--color-pe-bg);
   transform: translateY(-2px);
 }
 
@@ -358,7 +365,8 @@ input, textarea, select, button {
 .nav-link-bold {
   font-family: var(--font-kade-medium);
   font-weight: 500;
-  @apply text-pe-accent-dark tracking-normal;
+  color: var(--color-pe-text-dark);
+  @apply tracking-normal;
   transition: color 300ms ease-out;
   letter-spacing: 0.02em;
   font-size: 1rem;
@@ -388,7 +396,9 @@ input, textarea, select, button {
 .btn-contact {
   font-family: var(--font-kade-medium);
   font-weight: 500;
-  @apply inline-flex items-center justify-center border border-pe-accent-dark text-pe-accent-dark px-6 py-2 tracking-normal;
+  @apply inline-flex items-center justify-center px-6 py-2 tracking-normal;
+  border: 1px solid var(--color-pe-text-dark);
+  color: var(--color-pe-text-dark);
   border-radius: 50px;
   transition: all 300ms ease-out;
   letter-spacing: 0.02em;
@@ -397,8 +407,8 @@ input, textarea, select, button {
 }
 
 .btn-contact:hover {
-  background-color: var(--color-pe-accent-dark);
-  color: white;
+  background-color: var(--color-pe-text-dark);
+  color: var(--color-pe-bg);
   transform: translateY(-1px);
 }
 
@@ -406,7 +416,9 @@ input, textarea, select, button {
 .btn-contact-light {
   font-family: var(--font-kade-medium);
   font-weight: 500;
-  @apply inline-flex items-center justify-center border border-white text-white px-6 py-2 tracking-normal;
+  @apply inline-flex items-center justify-center px-6 py-2 tracking-normal;
+  border: 1px solid var(--color-pe-bg);
+  color: var(--color-pe-bg);
   border-radius: 50px;
   transition: all 300ms ease-out;
   letter-spacing: 0.02em;
@@ -415,8 +427,8 @@ input, textarea, select, button {
 }
 
 .btn-contact-light:hover {
-  background-color: white;
-  color: var(--color-pe-accent-dark);
+  background-color: var(--color-pe-bg);
+  color: var(--color-pe-text-dark);
   transform: translateY(-1px);
 }
 
@@ -442,15 +454,18 @@ input, textarea, select, button {
 .btn-menu-cta {
   font-family: var(--font-kade-medium);
   font-weight: 600;
-  @apply inline-flex items-center justify-center bg-transparent border-2 border-pe-accent-dark text-pe-accent-dark px-10 py-4 tracking-wide uppercase text-sm;
+  @apply inline-flex items-center justify-center px-10 py-4 tracking-wide uppercase text-sm;
+  background-color: transparent;
+  border: 2px solid var(--color-pe-text-dark);
+  color: var(--color-pe-text-dark);
   border-radius: 0;
   transition: all 300ms ease-out;
   letter-spacing: 0.1em;
 }
 
 .btn-menu-cta:hover {
-  background-color: var(--color-pe-accent-dark);
-  color: white;
+  background-color: var(--color-pe-text-dark);
+  color: var(--color-pe-bg);
   transform: translateY(-3px);
 }
 
@@ -459,16 +474,17 @@ input, textarea, select, button {
   font-family: var(--font-kade-medium);
   font-weight: 600;
   @apply block text-xs mb-3 uppercase tracking-widest;
-  color: var(--color-pe-accent-dark);
+  color: var(--color-pe-text-dark);
   letter-spacing: 0.15em;
 }
 
 .form-field-bold {
   font-family: var(--font-kade-regular);
   font-weight: 400;
-  @apply w-full bg-transparent px-0 py-4 text-pe-accent-dark;
+  @apply w-full bg-transparent px-0 py-4;
+  color: var(--color-pe-text-dark);
   border: none;
-  border-bottom: 2px solid var(--color-pe-accent-dark);
+  border-bottom: 2px solid var(--color-pe-text-dark);
   outline: none;
   transition: border-color 300ms ease-out;
   font-size: 1.125rem;
@@ -480,7 +496,7 @@ input, textarea, select, button {
 
 .form-field-bold::placeholder {
   font-family: var(--font-kade-regular);
-  color: rgba(139, 52, 41, 0.5);
+  color: rgba(115, 38, 33, 0.5);
   font-weight: 400;
 }
 
@@ -488,7 +504,9 @@ input, textarea, select, button {
 .btn-reservar {
   font-family: var(--font-kade-bold);
   font-weight: 700;
-  @apply inline-flex items-center justify-center bg-pe-accent-dark text-white px-12 py-5 tracking-wide uppercase text-base;
+  @apply inline-flex items-center justify-center px-12 py-5 tracking-wide uppercase text-base;
+  background-color: var(--color-pe-text-dark);
+  color: var(--color-pe-bg);
   border-radius: 0;
   transition: all 300ms ease-out;
   letter-spacing: 0.1em;
@@ -504,7 +522,7 @@ input, textarea, select, button {
   font-family: var(--font-kade-medium);
   font-weight: 700;
   @apply text-sm uppercase tracking-widest mb-3;
-  color: var(--color-pe-accent-dark);
+  color: var(--color-pe-text-dark);
   letter-spacing: 0.2em;
 }
 
@@ -512,7 +530,7 @@ input, textarea, select, button {
   font-family: var(--font-kade-regular);
   font-weight: 500;
   @apply text-lg md:text-xl;
-  color: var(--color-pe-accent-dark);
+  color: var(--color-pe-text-dark);
   line-height: 1.4;
 }
 
@@ -529,7 +547,7 @@ input, textarea, select, button {
   font-family: var(--font-kade-medium);
   font-weight: 700;
   @apply text-xs uppercase tracking-widest mb-3;
-  color: white;
+  color: var(--color-pe-bg);
   letter-spacing: 0.2em;
 }
 
@@ -537,8 +555,13 @@ input, textarea, select, button {
   font-family: var(--font-kade-regular);
   font-weight: 400;
   @apply text-sm;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-pe-bg);
+  opacity: 0.9;
   line-height: 1.5;
+}
+
+.footer-link-hover:hover {
+  color: var(--color-pe-accent-yellow);
 }
 
 /* ===============================================

@@ -7,34 +7,32 @@ import ScrollReveal from "@/components/ScrollReveal";
  */
 export default function Footer() {
   return (
-    <footer className="relative bg-pe-accent-dark text-white">
+    <footer className="relative text-white" style={{backgroundColor: '#732621'}}>
       {/* Contenido principal */}
-      <div className="relative z-10 py-20">
+      <div className="relative z-10 py-8">
         <div className="container">
+          {/* Logo */}
           <ScrollReveal delay={0.1}>
-            <div className="text-center mb-16">
+            <div className="flex justify-center md:justify-start mb-8">
               <Image
                 src="/assets/Logo/PNG/logo alternativo blanco.png"
-                width={200}
-                height={50}
+                width={150}
+                height={40}
                 alt="Puerto Escondido"
-                sizes="(min-width: 768px) 200px, 160px"
-                className="w-[160px] md:w-[200px] h-auto mx-auto mb-6"
+                sizes="(min-width: 768px) 150px, 120px"
+                className="w-[120px] md:w-[150px] h-auto"
               />
-              <p className="footer-tagline text-white/90">
-                LA CALLE SE HIZO MESA,<br />
-                LA COSTA SE HIZO TACO
-              </p>
             </div>
           </ScrollReveal>
           
+          {/* Información de contacto compacta */}
           <ScrollReveal delay={0.3}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
               
               {/* Dirección */}
               <div>
-                <h3 className="footer-label">DIRECCIÓN</h3>
-                <p className="footer-info">
+                <h3 className="footer-label text-xs">DIRECCIÓN</h3>
+                <p className="footer-info text-sm">
                   Quilpué<br />
                   Valparaíso, Chile
                 </p>
@@ -42,8 +40,8 @@ export default function Footer() {
               
               {/* Horarios */}
               <div>
-                <h3 className="footer-label">HORARIOS</h3>
-                <p className="footer-info">
+                <h3 className="footer-label text-xs">HORARIOS</h3>
+                <p className="footer-info text-sm">
                   Martes - Domingo<br />
                   13:00 - 22:30 hrs
                 </p>
@@ -51,8 +49,8 @@ export default function Footer() {
               
               {/* Contacto */}
               <div>
-                <h3 className="footer-label">CONTACTO</h3>
-                <p className="footer-info">
+                <h3 className="footer-label text-xs">CONTACTO</h3>
+                <p className="footer-info text-sm">
                   +56 9 1234 5678<br />
                   info@puertoescondido.cl
                 </p>
@@ -60,12 +58,12 @@ export default function Footer() {
               
               {/* Redes */}
               <div>
-                <h3 className="footer-label">REDES</h3>
+                <h3 className="footer-label text-xs">REDES</h3>
                 <a
                   href="https://instagram.com/puertoescondido_cl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="footer-info hover:text-pe-accent-yellow transition-colors duration-300 inline-block"
+                  className="footer-info footer-link-hover transition-colors duration-300 inline-block text-sm"
                   aria-label="Instagram"
                 >
                   @puertoescondido_cl
@@ -74,10 +72,10 @@ export default function Footer() {
             </div>
           </ScrollReveal>
           
-          {/* Copyright */}
+          {/* Copyright compacto */}
           <ScrollReveal delay={0.5}>
-            <div className="mt-16 pt-8 border-t border-white/20 text-center">
-              <p className="text-white/70 text-sm">
+            <div className="mt-6 pt-4 border-t border-white/20 text-center">
+              <p className="text-white/70 text-xs">
                 © 2025 Puerto Escondido - Todos los derechos reservados
               </p>
             </div>
