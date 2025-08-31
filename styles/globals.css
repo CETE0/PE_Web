@@ -79,6 +79,53 @@
   --spacing-section: 6rem;
   --spacing-section-mobile: 4rem;
   --spacing-container: 2rem;
+  /* 🔥🔥 SISTEMA AVANZADO DE POSICIONAMIENTO */
+  /* Variables para movimientos extremos */
+  --taco-position-x: 85px; /* Movimiento horizontal del taco (MÁS a la derecha dentro del container) */
+  
+  --taco-position-y: -50px;    /* Movimiento vertical del taco */
+  --vasos-position-x: 30px; /* Movimiento horizontal de los vasos (MÁS a la derecha dentro del container) */
+  --vasos-position-y: 0px;   /* Movimiento vertical de los vasos */
+
+  /* Variables de escala extrema */
+  --taco-scale: 1.8;        /* Escala del taco moderada para no invadir el texto */
+  --vasos-scale: 1.4;       /* Escala de los vasos moderada */
+
+  /* Variables de rotación */
+  --taco-rotation: 0deg;    /* Rotación del taco */
+  --vasos-rotation: 0deg;   /* Rotación de los vasos */
+
+  /* 🔥 Variables LEGACY (para compatibilidad) */
+  --taco-margin-right: 4rem; /* Separación del texto en desktop */
+  --vasos-margin-right: 3rem; /* Separación del formulario en desktop */
+  --taco-translate-x: 0px; /* Ajuste fino horizontal del taco */
+  --vasos-translate-x: 0px; /* Ajuste fino horizontal de los vasos/tasas */
+
+  /* 🔥 Variables para tamaño de tasas/vasos */
+  --vasos-width-mobile: 400px; /* Ancho en móvil */
+  --vasos-width-tablet: 550px; /* Ancho en tablet */
+  --vasos-width-desktop: 700px; /* Ancho en desktop */
+
+  /* 🎯🎯 SISTEMA DE CONTROL DE ESPACIADO ENTRE SECCIONES */
+  /* Variables para ajustar manualmente la distancia entre secciones */
+
+  /* 🔥🔥 SECCIÓN "CADA TACO TOCA" */
+  --cada-taco-toca-padding-y-mobile: 0.5rem;    /* Espaciado vertical en móvil (REDUCIDO PARA SUBIR SECCIÓN) */
+  --cada-taco-toca-padding-y-desktop: 1rem;     /* Espaciado vertical en desktop (REDUCIDO PARA SUBIR SECCIÓN) */
+  --cada-taco-toca-padding-x-top: 0.25rem;      /* Espaciado superior horizontal */
+  --cada-taco-toca-padding-x-bottom: 0.25rem;   /* Espaciado inferior horizontal */
+
+  /* 🔥🔥 SECCIÓN MENÚ */
+  --menu-padding-y-mobile: 2rem;                 /* Espaciado vertical en móvil (BALANCEADO) */
+  --menu-padding-y-desktop: 3rem;                /* Espaciado vertical en desktop (BALANCEADO) */
+
+  /* 🔥🔥 SECCIÓN RESERVAS */
+  --reservas-padding-y-mobile: 2rem;           /* Espaciado vertical en móvil (REDUCIDO PARA SUBIR SECCIÓN) */
+  --reservas-padding-y-desktop: 3.5rem;          /* Espaciado vertical en desktop (REDUCIDO PARA SUBIR SECCIÓN) */
+
+  /* 🔥🔥 SECCIÓN UBICACIÓN */
+  --ubicacion-padding-y-mobile: 3rem;            /* Espaciado vertical en móvil (AUMENTADO PARA MAYOR DISTANCIA) */
+  --ubicacion-padding-y-desktop: 4rem;           /* Espaciado vertical en desktop (AUMENTADO PARA MAYOR DISTANCIA) */
 }
 
 /* ===============================================
@@ -87,6 +134,32 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Optimizaciones de rendimiento */
+* {
+  box-sizing: border-box;
+}
+
+/* Mejoras de imagen para mejor responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedores optimizados para grids */
+.grid-optimized {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+  max-width: 72rem; /* 1152px */
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .grid-optimized {
+    gap: 4rem;
+  }
 }
 
 body {
@@ -99,6 +172,47 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===============================================
+   FIGURAS: TACO Y VASOS – CONTENCIÓN Y POSICIONAMIENTO
+   =============================================== */
+
+/* Contenedor que limita el overflow visual y alinea con el texto */
+.figure-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: visible; /* permite que la escala sobresalga sin romper layout */
+}
+
+/* Imagen de taco controlada por variables avanzadas */
+.img-taco {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transform: translate(var(--taco-position-x), var(--taco-position-y))
+             scale(var(--taco-scale)) rotate(var(--taco-rotation));
+  transform-origin: center;
+}
+
+/* Imagen de vasos controlada por variables avanzadas */
+.img-vasos {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transform: translate(var(--vasos-position-x), var(--vasos-position-y))
+             scale(var(--vasos-scale)) rotate(var(--vasos-rotation));
+  transform-origin: center;
+}
+
+/* En móviles reducimos la escala para que no tape el texto */
+@media (max-width: 767px) {
+  .img-taco { transform: translate(0, 0) scale(1) rotate(var(--taco-rotation)); }
+  .img-vasos { transform: translate(0, 0) scale(1) rotate(var(--vasos-rotation)); }
 }
 
 /* Configuración global para asegurar que TODO use Kade */
@@ -157,6 +271,11 @@ input, textarea, select, button {
   @apply max-w-7xl mx-auto;
   padding-left: var(--spacing-container);
   padding-right: var(--spacing-container);
+}
+
+/* Contenedor sin padding para header - permite extremos simétricos */
+.container-header {
+  @apply max-w-7xl mx-auto;
 }
 
 /* ===============================================
@@ -432,6 +551,57 @@ input, textarea, select, button {
   transform: translateY(-1px);
 }
 
+/* 🎪🎪 HEADER CON EFECTO DE TOLDO */
+/* Navegación para header con toldo - Kade Medium */
+.nav-link-toldo {
+  font-family: var(--font-kade-medium);
+  font-weight: 500;
+  color: var(--color-pe-text-dark);
+  transition: color 300ms ease-out;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
+  text-transform: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.nav-link-toldo:hover {
+  color: var(--color-pe-accent);
+}
+
+/* Botón de contacto para header con toldo - Kade Medium */
+.btn-contact-toldo {
+  font-family: var(--font-kade-medium);
+  font-weight: 500;
+  @apply inline-flex items-center justify-center px-6 py-2 tracking-normal;
+  border: 2px solid var(--color-pe-text-dark);
+  color: var(--color-pe-text-dark);
+  border-radius: 50px;
+  transition: all 300ms ease-out;
+  letter-spacing: 0.02em;
+  background-color: transparent;
+  text-transform: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-contact-toldo:hover {
+  background-color: var(--color-pe-text-dark);
+  color: var(--color-pe-bg);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsive para header con toldo */
+@media (max-width: 768px) {
+  .nav-link-toldo {
+    font-size: 0.875rem;
+  }
+
+  .btn-contact-toldo {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
 /* Títulos de sección - Kade Bold */
 .section-title {
   font-family: var(--font-kade-bold);
@@ -565,25 +735,128 @@ input, textarea, select, button {
 }
 
 /* ===============================================
+   UTILIDADES PARA MEJOR RESPONSIVE
+   =============================================== */
+
+/* Contenedor de imagen optimizado */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+/* 🔥🔥 SISTEMA AVANZADO DE POSICIONAMIENTO */
+.advanced-positioning {
+  position: relative;
+  overflow: visible;
+  z-index: 10;
+}
+
+.image-freeform {
+  position: relative;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.image-freeform:hover {
+  transform: scale(1.05);
+}
+
+/* Contenedores con overflow controlado */
+.overflow-controlled {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  min-height: 400px;
+}
+
+/* Sistema de coordenadas personalizado */
+.coordinate-system {
+  position: relative;
+  width: 120%; /* Permite overflow del 20% */
+  margin: 0 auto;
+}
+
+/* Sistema de escalado seguro */
+.scale-safe {
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.scale-safe:hover {
+  transform: scale(1.05);
+}
+
+/* Grid responsive mejorado */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+}
+
+/* ===============================================
    FUENTES KADE IMPLEMENTADAS ✓
    ===============================================
-   
+
    ✅ ESTADO: Fuentes Kade correctamente implementadas
-   
+
    📁 Archivos disponibles en /public/fonts/:
       - Kade_Regular.otf (peso 400)
-      - Kade_Medium.otf (peso 500) 
+      - Kade_Medium.otf (peso 500)
       - Kade_Bold.otf (peso 700)
-   
+
    🎯 JERARQUÍA TIPOGRÁFICA:
       - Encabezados: Kade Bold (700)
       - Subtítulos/Navegación: Kade Medium (500)
       - Cuerpo de texto: Kade Regular (400)
-   
+
    ⚡ OPTIMIZACIÓN FUTURA:
       - Convertir OTF → WOFF2 para mejor compresión
       - Usar herramientas como Font Squirrel o FontTools
-   
+
    🌐 COBERTURA: 100% de la web usa exclusivamente Kade
-   
+
    ============================================== */
+
+/* 🎯🎯 MEDIA QUERIES PARA ESPACIADO DE SECCIONES EN DESKTOP */
+@media (min-width: 1024px) {
+  :root {
+    /* 🔥🔥 SECCIÓN "CADA TACO TOCA" - DESKTOP */
+    --cada-taco-toca-padding-y-mobile: var(--cada-taco-toca-padding-y-desktop);
+    --cada-taco-toca-padding-x-top: var(--cada-taco-toca-padding-x-top);
+    --cada-taco-toca-padding-x-bottom: var(--cada-taco-toca-padding-x-bottom);
+
+    /* 🔥🔥 SECCIÓN MENÚ - DESKTOP */
+    --menu-padding-y-mobile: var(--menu-padding-y-desktop);
+
+    /* 🔥🔥 SECCIÓN RESERVAS - DESKTOP */
+    --reservas-padding-y-mobile: var(--reservas-padding-y-desktop);
+
+    /* 🔥🔥 SECCIÓN UBICACIÓN - DESKTOP */
+    --ubicacion-padding-y-mobile: var(--ubicacion-padding-y-desktop);
+  }
+}

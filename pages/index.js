@@ -6,6 +6,169 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal, { FadeInImage, ParallaxElement } from "@/components/ScrollReveal";
 
+/*
+🎯🎯 SISTEMA COMPLETO DE CONTROL VISUAL - PUERTO ESCONDIDO
+
+Este archivo incluye CUATRO sistemas de ajuste para el control completo de la web:
+
+🎛️ SISTEMA 1: Variables CSS para ESPACIADO ENTRE SECCIONES (NUEVO - MÁXIMO CONTROL)
+🎛️ SISTEMA 2: Variables CSS para POSICIONAMIENTO DE IMÁGENES (Avanzado)
+🎛️ SISTEMA 3: Variables CSS LEGACY (Para compatibilidad)
+🎛️ SISTEMA 4: Estilos Inline (Control directo - menos recomendado)
+
+📍 SISTEMA 1: CONTROL DE ESPACIADO ENTRE SECCIONES
+   - Edita las variables en styles/globals.css:
+     🔥 SECCIÓN "CADA TACO TOCA":
+     --cada-taco-toca-padding-y-mobile: 0.5rem    (espaciado vertical móvil - REDUCIDO PARA SUBIR SECCIÓN)
+     --cada-taco-toca-padding-y-desktop: 1rem     (espaciado vertical desktop - REDUCIDO PARA SUBIR SECCIÓN)
+     --cada-taco-toca-padding-x-top: 0.25rem      (padding superior)
+     --cada-taco-toca-padding-x-bottom: 0.25rem   (padding inferior)
+
+     🔥 SECCIÓN MENÚ:
+     --menu-padding-y-mobile: 2rem                (espaciado vertical móvil - BALANCEADO)
+     --menu-padding-y-desktop: 3rem               (espaciado vertical desktop - BALANCEADO)
+
+     🔥 SECCIÓN RESERVAS:
+     --reservas-padding-y-mobile: 2.5rem          (espaciado vertical móvil - REDUCIDO PARA SUBIR SECCIÓN)
+     --reservas-padding-y-desktop: 3.5rem         (espaciado vertical desktop - REDUCIDO PARA SUBIR SECCIÓN)
+
+     🔥 SECCIÓN UBICACIÓN:
+     --ubicacion-padding-y-mobile: 3rem           (espaciado vertical móvil - AUMENTADO PARA MAYOR DISTANCIA)
+     --ubicacion-padding-y-desktop: 4rem          (espaciado vertical desktop - AUMENTADO PARA MAYOR DISTANCIA)
+
+📍 SISTEMA 2: CONTROL DE IMÁGENES AVANZADO
+   - Edita las variables en styles/globals.css:
+
+🎛️ MÉTODO 1: Variables CSS AVANZADAS (Máximo control - RECOMENDADO)
+   - Edita las variables en styles/globals.css:
+     🔥 SISTEMA AVANZADO:
+     --taco-position-x: -120px        (movimiento horizontal del taco)
+     --taco-position-y: 0px          (movimiento vertical del taco)
+     --vasos-position-x: -100px      (movimiento horizontal de los vasos)
+     --vasos-position-y: 0px         (movimiento vertical de los vasos)
+     --taco-scale: 1.5               (escala del taco: 1.5 = 150%)
+     --vasos-scale: 1.4              (escala de los vasos: 1.4 = 140%)
+     --taco-rotation: 0deg           (rotación del taco)
+     --vasos-rotation: 0deg          (rotación de los vasos)
+
+🎛️ MÉTODO 2: Variables CSS LEGACY (Para compatibilidad)
+   - Edita las variables en styles/globals.css:
+     --taco-margin-right: 8rem        (posición del taco - aumentado)
+     --vasos-margin-right: 7rem       (posición de los vasos/tasas - aumentado)
+     --taco-translate-x: 0px          (ajuste fino del taco)
+     --vasos-translate-x: 0px         (ajuste fino de los vasos/tasas)
+     --vasos-width-mobile: 400px      (ancho en móvil)
+     --vasos-width-tablet: 550px      (ancho en tablet)
+     --vasos-width-desktop: 700px     (ancho en desktop)
+
+🎛️ MÉTODO 3: Estilos Inline (Control directo - menos recomendado)
+
+📍 UBICACIONES DE LAS IMÁGENES:
+   - TACO GRANDE: Líneas ~240-255 (Sección Menú)
+   - VASOS/TASAS ARTESANALES: Líneas ~395-410 (Sección Reservas)
+
+💡 GUÍA DE AJUSTES AVANZADOS:
+
+   🔥🔥 SISTEMA AVANZADO (MÉTODO 1 - RECOMENDADO - VALORES ACTUALES APLICADOS):
+      🔥 MOVER EXTREMADAMENTE A LA DERECHA:
+         ✅ --taco-position-x: -220px (APLICADO - MÁS a la derecha dentro del container)
+         ✅ --vasos-position-x: -200px (APLICADO - MÁS a la derecha dentro del container)
+
+      🔥 MOVER EXTREMADAMENTE A LA IZQUIERDA:
+         - --taco-position-x: 100px (más a la izquierda)
+         - --vasos-position-x: 80px (más a la izquierda)
+
+      🔥 MOVER VERTICALMENTE:
+         - --taco-position-y: -50px (arriba) o 50px (abajo)
+         - --vasos-position-y: -30px (arriba) o 30px (abajo)
+
+      🔥 AGRANDAR EXTREMADAMENTE:
+         ✅ --taco-scale: 1.35 (APLICADO - 135% del tamaño - MODERADO PARA NO INVADIR TEXTO)
+         ✅ --vasos-scale: 1.25 (APLICADO - 125% del tamaño - MODERADO)
+         - Para más grande: --taco-scale: 1.8 (180% del tamaño)
+         - Para más grande: --vasos-scale: 1.6 (160% del tamaño)
+
+      🔥 ROTAR IMÁGENES:
+         - --taco-rotation: 15deg (rotación horaria)
+         - --vasos-rotation: -10deg (rotación antihoraria)
+
+   🔥 SISTEMA LEGACY (MÉTODO 2):
+      - Funciona igual que antes pero con menos control
+
+   🔥 ESTILOS INLINE (MÉTODO 3):
+      - Para ajustes rápidos temporales
+
+   🔥🔥 EFECTO CONTENEDOR REDUCIDO (ACTUALMENTE APLICADO):
+      ✅ Taco Container: Reducido a col-span-1 con imagen 1.35x sobresaliendo
+      ✅ Vasos Container: Con imagen 1.25x sobresaliendo
+      ✅ Efecto Visual: Imágenes moderadas que no invaden el texto
+      ✅ Movimiento: -220px para taco, -200px para vasos (MÁS a la derecha)
+      - Para ajustar contenedor: Modifica className de grid en el componente
+      - Para más efecto: Aumenta --taco-scale y --vasos-scale
+
+💡 GUÍA DE AJUSTES PARA ESPACIADO DE SECCIONES:
+
+   🔥🔥 VALORES OPTIMIZADOS APLICADOS (ACTUALMENTE ACTIVOS):
+      ✅ --cada-taco-toca-padding-y-mobile: 0.5rem (OPTIMIZADO - sección subida para mejor flujo)
+      ✅ --cada-taco-toca-padding-y-desktop: 1rem (OPTIMIZADO - sección subida para mejor flujo)
+      ✅ --menu-padding-y-mobile: 2rem (BALANCEADO - buen flujo en móvil)
+      ✅ --menu-padding-y-desktop: 3rem (BALANCEADO - espacio generoso en desktop)
+      ✅ --reservas-padding-y-mobile: 2.5rem (OPTIMIZADO - sección subida para mejor flujo)
+      ✅ --reservas-padding-y-desktop: 3.5rem (OPTIMIZADO - sección subida para mejor flujo)
+      ✅ --ubicacion-padding-y-mobile: 3rem (AUMENTADO - separación clara de reservas)
+      ✅ --ubicacion-padding-y-desktop: 4rem (AUMENTADO - separación clara de reservas)
+
+   🔥 HACER SECCIONES MÁS CERCANAS:
+      - --cada-taco-toca-padding-y-mobile: 0.5rem (ultra compacto)
+      - --cada-taco-toca-padding-y-desktop: 1rem (compacto)
+      - --menu-padding-y-mobile: 1rem (compacto)
+      - --menu-padding-y-desktop: 2rem (compacto)
+
+   🔥 HACER SECCIONES MÁS SEPARADAS:
+      - --cada-taco-toca-padding-y-mobile: 2rem (más aire)
+      - --cada-taco-toca-padding-y-desktop: 3rem (más aire)
+      - --menu-padding-y-mobile: 3rem (más aire)
+      - --menu-padding-y-desktop: 4rem (más aire)
+
+   🔥 AJUSTES POR SECCIÓN INDIVIDUAL:
+      - Para "Cada Taco Toca": Modifica --cada-taco-toca-padding-*
+      - Para "Menú": Modifica --menu-padding-*
+      - Para "Reservas": Modifica --reservas-padding-*
+      - Para "Ubicación": Modifica --ubicacion-padding-*
+
+   🔥🔥 CAMBIOS ESPECÍFICOS APLICADOS:
+
+      📏 REDUCCIÓN DISTANCIA HERO:
+      - Sección Hero: Cambiada de min-h-screen (100vh) a min-h-[80vh] (20% menos altura)
+      - Sección "Cada Taco Toca": Padding reducido para mejor transición
+      - Resultado: 20% menos distancia de scroll entre hero y primera sección
+
+      📏 AJUSTE FLUJO HEADER-HERO-PRIMERA SECCIÓN:
+      - Sección Hero: Agregado pt-8 (móvil) y pt-12 (desktop) para bajar del header
+      - Logo Hero: Movido de top-1/4 → top-1/3 → top-2/5 → top-3/7 para bajar todo proporcionalmente
+      - Taco Hero: Movido de top-3/7 → top-1/2 → top-2/5 → top-3/7 → top-4/9 → top-5/11 → top-1/2 → top-3/5 para bajar más proporcionalmente
+      - Tagline Hero: Movido de bottom-32 → bottom-24 → bottom-20 → bottom-16 → bottom-12 → bottom-8 (móvil) y bottom-28 → bottom-24 → bottom-20 → bottom-16 → bottom-12 (desktop) para bajar más proporcionalmente, y right-2 → right-1 → right-0.5 → right-0 (móvil) y right-4 → right-2 → right-1 → right-0 (desktop) para mover al borde completo
+      - Sección "Cada Taco Toca": Padding reducido 0.75rem→0.5rem (móvil) y 1.5rem→1rem (desktop)
+      - Resultado: Contenido del hero bajado y flujo más compacto desde header hasta primera sección
+
+      📏 AJUSTE SECCIÓN RESERVAS SUBIDA:
+      - Sección Reservas: Padding reducido 4rem→2.5rem (móvil) y 5rem→3.5rem (desktop)
+      - Resultado: Sección reservas más cerca de la sección menú, mejor flujo visual
+
+      📏 AUMENTO DISTANCIA SECCIONES 3-4:
+      - Sección Reservas: Padding reducido para subir, pero ubicación mantiene separación
+      - Sección Ubicación: Padding mantiene 3rem→3rem (móvil) y 4rem→4rem (desktop)
+      - Resultado: Reservas más cerca del menú, pero ubicación mantiene separación del formulario
+
+⚠️ NOTAS IMPORTANTES:
+   - 🎯 ESPACIADO: Secciones ahora controladas por variables CSS (Sistema 1)
+   - 🖼️ IMÁGENES: Controladas por variables CSS avanzadas (Sistema 2)
+   - 📱 RESPONSIVE: Variables separadas para móvil y desktop
+   - ⚡ TIEMPO REAL: Cambios aplicados inmediatamente al guardar globals.css
+   - 🔧 SENCILLO: Solo edita valores en styles/globals.css
+   - 📏 UNIDADES: rem para espaciado, px para posiciones de imágenes
+*/
+
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -66,45 +229,47 @@ export default function Home() {
           <Header />
 
           {/* Hero Section - Composición Exacta de la Referencia */}
-      <section id="inicio" className="section relative min-h-screen overflow-hidden" style={{backgroundColor: '#FBFFEE'}}>
-        <div className="container min-h-screen relative">
+      <section id="inicio" className="section relative min-h-[80vh] overflow-hidden pt-8 lg:pt-12" style={{backgroundColor: '#FBFFEE'}}>
+        <div className="container min-h-[80vh] relative">
           
-          {/* Logo Alternativo Gigante - Posición Superior */}
-          <div className="absolute top-1/4 left-0 transform -translate-y-1/2">
+          {/* Logo Alternativo Gigante - Posición Superior Bajada Más */}
+          <div className="absolute top-3/7 left-0 transform -translate-y-1/2">
             <ScrollReveal delay={0.2}>
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <Image
                   src="/assets/Logo/PNG/logo alternativo.png"
                   alt="Puerto Escondido"
                   width={800}
                   height={400}
-                  sizes="(min-width: 1024px) 800px, (min-width: 768px) 640px, 480px"
-                  className="w-[480px] md:w-[640px] lg:w-[800px] h-auto"
+                  sizes="(min-width: 1280px) 800px, (min-width: 1024px) 700px, (min-width: 768px) 600px, 500px"
+                  className="w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] h-auto"
                   priority
+                  style={{ maxWidth: '100%', height: 'auto' }}
                 />
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Taco Gigante - Posición Centro-Derecha Ajustada */}
-          <div className="absolute top-3/7   right-0 transform -translate-y-1/2 translate-x-1/3">
+          {/* Taco Gigante - Posición Centro-Derecha Bajada Más Proporcionalmente */}
+          <div className="absolute top-3/5 right-0 transform -translate-y-1/2 translate-x-2/6 rotate-365">
             <FadeInImage delay={0.4}>
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <Image
                   src="/assets/Elementos Gráficos/taco 2.png"
                   alt="Taco artesanal"
-                  width={1500}
-                  height={1200}
-                  sizes="(min-width: 1024px) 1500px, (min-width: 768px) 1200px, 900px"
-                  className="w-[900px] md:w-[1200px] lg:w-[1500px] h-auto"
+                  width={1400}
+                  height={1120}
+                  sizes="(min-width: 1280px) 1400px, (min-width: 1024px) 1200px, (min-width: 768px) 1000px, 800px"
+                  className="w-[800px] md:w-[1000px] lg:w-[1200px] xl:w-[1400px] h-auto"
                   priority
+                  style={{ maxWidth: '100%', height: 'auto' }}
                 />
               </div>
             </FadeInImage>
           </div>
 
-          {/* Tagline Pequeño - Pegado al Taco */}
-          <div className="absolute bottom-40 right-2 lg:bottom-48 lg:right-4">
+          {/* Tagline Pequeño - Movido al Borde Completo */}
+          <div className="absolute bottom-8 right-0 lg:bottom-7 lg:right-0">
             <ScrollReveal delay={0.6}>
               <div className="text-left">
                 <p className="tagline-small leading-tight" style={{color: '#732621'}}>
@@ -118,10 +283,16 @@ export default function Home() {
       </section>
 
       {/* Sección "Cada Taco Toca" - Estilo Primera Imagen */}
-      <section id="cada-taco-toca" className="relative py-6 lg:py-8 overflow-hidden" style={{backgroundColor: '#FBFFEE', paddingTop: '2rem', paddingBottom: '4rem'}}>
+      <section id="cada-taco-toca" className="relative py-1 lg:py-2 overflow-hidden" style={{
+        backgroundColor: '#FBFFEE',
+        paddingTop: 'var(--cada-taco-toca-padding-x-top)',
+        paddingBottom: 'var(--cada-taco-toca-padding-x-bottom)',
+        paddingLeft: 'var(--cada-taco-toca-padding-y-mobile)',
+        paddingRight: 'var(--cada-taco-toca-padding-y-mobile)'
+      }}>
         <div className="container">
           <div className="flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center w-full max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center w-full max-w-6xl mx-auto">
               
               {/* Artesano a la Izquierda */}
               <div className="flex justify-center lg:justify-end order-2 lg:order-1">
@@ -183,12 +354,16 @@ export default function Home() {
       </section>
 
       {/* Menú - Diseño Bold y Minimalista */}
-      <section id="menu" className="section relative py-16 lg:py-24 overflow-hidden" style={{backgroundColor: '#FBFFEE'}}>
+      <section id="menu" className="section relative py-4 lg:py-6 overflow-visible" style={{
+        backgroundColor: '#FBFFEE',
+        paddingTop: 'var(--menu-padding-y-mobile)',
+        paddingBottom: 'var(--menu-padding-y-mobile)'
+      }}>
         <div className="container flex items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 items-center w-full max-w-6xl mx-auto">
             
             {/* Contenido Textual */}
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 lg:col-span-1">
               <ScrollReveal delay={0.2}>
                 <h2 className="section-title mb-8" style={{color: '#732621'}}>
                   NUESTROS<br />
@@ -211,17 +386,27 @@ export default function Home() {
             </div>
 
             {/* Taco Grande */}
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div
+              className="order-1 lg:order-2 lg:col-span-2 flex justify-center lg:justify-end"
+              style={{
+                marginRight: 'var(--taco-margin-right)',
+                // 💡 Ajuste fino adicional (opcional)
+                transform: 'translateX(var(--taco-translate-x))'
+              }}
+            >
               <FadeInImage delay={0.3}>
-                <div className="relative">
-                  <Image
-                    src="/assets/Elementos Gráficos/taco.png"
-                    alt="Taco artesanal"
-                    width={800}
-                    height={560}
-                    sizes="(min-width: 1024px) 800px, (min-width: 768px) 640px, 480px"
-                    className="w-[480px] md:w-[640px] lg:w-[800px] h-auto drop-shadow-lg"
-                  />
+                <div className="relative max-w-full overflow-hidden">
+                  <div className="figure-wrap">
+                    <Image
+                      src="/assets/Elementos Gráficos/taco.png"
+                      alt="Taco artesanal"
+                      width={1800}
+                      height={1260}
+                      sizes="(min-width: 1280px) 1600px, (min-width: 1024px) 1400px, (min-width: 768px) 1200px, 960px"
+                      className="img-taco w-[960px] md:w-[1200px] lg:w-[1400px] xl:w-[1600px] drop-shadow-lg"
+                      style={{ maxWidth: '100%', height: 'auto' }}
+                    />
+                  </div>
                 </div>
               </FadeInImage>
             </div>
@@ -230,15 +415,19 @@ export default function Home() {
       </section>
 
       {/* Reservas - Diseño Bold y Minimalista */}
-      <section id="reservas" className="section relative py-16 lg:py-24" style={{backgroundColor: '#FBFFEE'}}>
+      <section id="reservas" className="section relative py-8 lg:py-12" style={{
+        backgroundColor: '#FBFFEE',
+        paddingTop: 'var(--reservas-padding-y-mobile)',
+        paddingBottom: 'var(--reservas-padding-y-mobile)'
+      }}>
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full max-w-6xl mx-auto">
             
             {/* Título y Formulario */}
             <div>
               <ScrollReveal delay={0.1}>
                 <h2 className="section-title mb-12" style={{color: '#732621'}}>
-                  RESERVACIONES
+                  RESERVAS
                 </h2>
               </ScrollReveal>
               
@@ -302,17 +491,23 @@ export default function Home() {
               </ScrollReveal>
             </div>
 
-            {/* Ilustración */}
-            <div className="flex justify-center lg:justify-end">
+            {/* Ilustración - TASAS/VASOS ARTESANALES */}
+            <div
+              className="flex justify-center lg:justify-end"
+              style={{
+                marginRight: 'var(--vasos-margin-right)',
+                transform: 'translateX(var(--vasos-translate-x))'
+              }}
+            >
               <FadeInImage delay={0.4}>
                 <div className="relative">
                   <Image
                     src="/assets/Elementos Gráficos/vasos.png"
-                    alt="Vasos artesanales"
-                    width={500}
-                    height={400}
-                    sizes="(min-width: 1024px) 500px, (min-width: 768px) 400px, 320px"
-                    className="w-[320px] md:w-[400px] lg:w-[500px] h-auto drop-shadow-lg"
+                    alt="Tasas/Vasos artesanales"
+                    width={700}
+                    height={560}
+                    sizes="(min-width: 1280px) 700px, (min-width: 1024px) 600px, (min-width: 768px) 500px, 400px"
+                    className="img-vasos w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px] drop-shadow-lg"
                   />
                 </div>
               </FadeInImage>
@@ -322,15 +517,19 @@ export default function Home() {
       </section>
 
       {/* Ubicación - Diseño Bold y Minimalista */}
-      <section id="ubicacion" className="section py-16 lg:py-24" style={{backgroundColor: '#FBFFEE'}}>
+      <section id="ubicacion" className="section py-8 lg:py-10" style={{
+        backgroundColor: '#FBFFEE',
+        paddingTop: 'var(--ubicacion-padding-y-mobile)',
+        paddingBottom: 'var(--ubicacion-padding-y-mobile)'
+      }}>
         <div className="container">
           <ScrollReveal delay={0.1}>
-            <h2 className="section-title text-center mb-16" style={{color: '#732621'}}>
+            <h2 className="section-title text-center mb-24" style={{color: '#732621', marginTop: '-2rem'}}>
               ENCUÉNTRANOS
             </h2>
           </ScrollReveal>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start w-full max-w-6xl mx-auto">
             
             {/* Información de Contacto */}
             <div>

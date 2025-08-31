@@ -11,23 +11,21 @@ export default function Footer() {
       {/* Contenido principal */}
       <div className="relative z-10 py-8">
         <div className="container">
-          {/* Logo */}
-          <ScrollReveal delay={0.1}>
-            <div className="flex justify-center md:justify-start mb-8">
-              <Image
-                src="/assets/Logo/PNG/logo alternativo blanco.png"
-                width={150}
-                height={40}
-                alt="Puerto Escondido"
-                sizes="(min-width: 768px) 150px, 120px"
-                className="w-[120px] md:w-[150px] h-auto"
-              />
-            </div>
-          </ScrollReveal>
-          
-          {/* Información de contacto compacta */}
+          {/* Información de contacto compacta con logo */}
           <ScrollReveal delay={0.3}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center md:text-left">
+              
+              {/* Logo al lado izquierdo */}
+              <div className="flex justify-center md:justify-start items-start">
+                <Image
+                  src="/assets/Logo/PNG/logo alternativo blanco.png"
+                  width={150}
+                  height={40}
+                  alt="Puerto Escondido"
+                  sizes="(min-width: 768px) 150px, 120px"
+                  className="w-[120px] md:w-[150px] h-auto"
+                />
+              </div>
               
               {/* Dirección */}
               <div>
