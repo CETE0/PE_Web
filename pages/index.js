@@ -5,6 +5,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal, { FadeInImage, ParallaxElement } from "@/components/ScrollReveal";
+import { useReservation } from "@/hooks/useReservation";
 
 /*
 🎯🎯 SISTEMA COMPLETO DE CONTROL VISUAL - PUERTO ESCONDIDO
@@ -172,6 +173,18 @@ Este archivo incluye CUATRO sistemas de ajuste para el control completo de la we
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+
+  // Hook para manejar el formulario de reservas
+  const {
+    formData,
+    errors,
+    isSubmitting,
+    submitStatus,
+    submitMessage,
+    updateField,
+    submitReservation,
+    resetForm,
+  } = useReservation();
 
   useEffect(() => {
     // Simular tiempo de carga mínimo
@@ -432,62 +445,160 @@ export default function Home() {
               </ScrollReveal>
               
               <ScrollReveal delay={0.3}>
-                <form className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="form-label-bold">NOMBRE</label>
-                      <input
-                        type="text"
-                        placeholder="Tu nombre completo"
-                        className="form-field-bold"
-                      />
+                <div className="space-y-8">
+                  {/* Mensaje de estado del formulario */}
+                  {submitMessage && (
+                    <div className={`p-4 rounded-lg border ${
+                      submitStatus === 'success'
+                        ? 'bg-green-50 border-green-200 text-green-800'
+                        : 'bg-red-50 border-red-200 text-red-800'
+                    }`}>
+                      {submitMessage}
+                      {submitStatus === 'error' && (
+                        <div className="mt-2 text-sm">
+                          <a href="/instrucciones" target="_blank" className="underline hover:no-underline">
+                            📋 Ver instrucciones de uso
+                          </a>
+                        </div>
+                      )}
                     </div>
-                    
-                    <div>
-                      <label className="form-label-bold">TELÉFONO</label>
-                      <input
-                        type="tel"
-                        placeholder="+56 9 xxxx xxxx"
-                        className="form-field-bold"
-                      />
+                  )}
+
+                  <form
+                    className="space-y-8"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      console.log('📝 Formulario enviado desde página principal');
+                      console.log('📦 Datos del formulario:', formData);
+                      console.log('🚀 Llamando a submitReservation...');
+                      submitReservation();
+                    }}
+                  >
+                    <div className="space-y-6">
+                      {/* Primera fila: Nombre y Teléfono */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label className="form-label-bold">NOMBRE</label>
+                          <input
+                            type="text"
+                            placeholder="Tu nombre completo"
+                            className={`form-field-bold ${errors.nombre ? 'border-red-500' : ''}`}
+                            value={formData.nombre}
+                            onChange={(e) => updateField('nombre', e.target.value)}
+                            disabled={isSubmitting}
+                          />
+                          {errors.nombre && (
+                            <p className="text-red-600 text-sm mt-1">{errors.nombre}</p>
+                          )}
+                        </div>
+
+                        <div>
+                          <label className="form-label-bold">TELÉFONO</label>
+                          <input
+                            type="tel"
+                            placeholder="+56 9 xxxx xxxx"
+                            className={`form-field-bold ${errors.telefono ? 'border-red-500' : ''}`}
+                            value={formData.telefono}
+                            onChange={(e) => updateField('telefono', e.target.value)}
+                            disabled={isSubmitting}
+                          />
+                          {errors.telefono && (
+                            <p className="text-red-600 text-sm mt-1">{errors.telefono}</p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Segunda fila: Email (opcional pero recomendado) */}
+                      <div>
+                        <label className="form-label-bold">
+                          EMAIL <span className="text-gray-500 text-sm font-normal">(opcional pero recomendado)</span>
+                        </label>
+                        <input
+                          type="email"
+                          placeholder="tu@email.com"
+                          className={`form-field-bold ${errors.email ? 'border-red-500' : ''}`}
+                          value={formData.email}
+                          onChange={(e) => updateField('email', e.target.value)}
+                          disabled={isSubmitting}
+                        />
+                        {errors.email && (
+                          <p className="text-red-600 text-sm mt-1">{errors.email}</p>
+                        )}
+                        <p className="text-gray-600 text-xs mt-1">
+                          📧 Te enviaremos confirmación y recordatorios por email
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                      <label className="form-label-bold">FECHA</label>
-                      <input
-                        type="date"
-                        className="form-field-bold"
-                      />
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div>
+                        <label className="form-label-bold">FECHA</label>
+                        <input
+                          type="date"
+                          className={`form-field-bold ${errors.fecha ? 'border-red-500' : ''}`}
+                          value={formData.fecha}
+                          onChange={(e) => updateField('fecha', e.target.value)}
+                          disabled={isSubmitting}
+                          min={new Date().toISOString().split('T')[0]}
+                        />
+                        {errors.fecha && (
+                          <p className="text-red-600 text-sm mt-1">{errors.fecha}</p>
+                        )}
+                      </div>
+
+                      <div>
+                        <label className="form-label-bold">HORA</label>
+                        <input
+                          type="time"
+                          className={`form-field-bold ${errors.hora ? 'border-red-500' : ''}`}
+                          value={formData.hora}
+                          onChange={(e) => updateField('hora', e.target.value)}
+                          disabled={isSubmitting}
+                        />
+                        {errors.hora && (
+                          <p className="text-red-600 text-sm mt-1">{errors.hora}</p>
+                        )}
+                      </div>
+
+                      <div>
+                        <label className="form-label-bold">PERSONAS</label>
+                        <input
+                          type="number"
+                          min="1"
+                          max="12"
+                          placeholder="2"
+                          className={`form-field-bold ${errors.personas ? 'border-red-500' : ''}`}
+                          value={formData.personas}
+                          onChange={(e) => updateField('personas', e.target.value)}
+                          disabled={isSubmitting}
+                        />
+                        {errors.personas && (
+                          <p className="text-red-600 text-sm mt-1">{errors.personas}</p>
+                        )}
+                      </div>
                     </div>
-                    
-                    <div>
-                      <label className="form-label-bold">HORA</label>
-                      <input
-                        type="time"
-                        className="form-field-bold"
-                      />
+
+                    <div className="pt-6">
+                      <button
+                        type="submit"
+                        className={`btn-reservar w-full ${
+                          isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                        }`}
+                        disabled={isSubmitting}
+                        onClick={(e) => {
+                          console.log('🖱️ Botón RESERVAR AHORA clickeado');
+                          console.log('📝 Estado del formulario:', {
+                            isSubmitting,
+                            submitStatus,
+                            hasData: Object.values(formData).some(v => v !== '')
+                          });
+                        }}
+                      >
+                        {isSubmitting ? 'ENVIANDO...' : 'RESERVAR AHORA'}
+                      </button>
                     </div>
-                    
-                    <div>
-                      <label className="form-label-bold">PERSONAS</label>
-                      <input
-                        type="number"
-                        min="1"
-                        max="12"
-                        placeholder="2"
-                        className="form-field-bold"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="pt-6">
-                    <button type="button" className="btn-reservar w-full">
-                      RESERVAR AHORA
-                    </button>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </ScrollReveal>
             </div>
 
