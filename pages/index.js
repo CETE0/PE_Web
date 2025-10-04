@@ -286,9 +286,8 @@ export default function Home() {
           <div className="absolute bottom-8 right-0 lg:bottom-7 lg:right-0">
             <ScrollReveal delay={0.6}>
               <div className="text-left">
-                <p className="tagline-small leading-tight" style={{color: '#732621'}}>
-                  LA CALLE SE HIZO MESA,<br />
-                  LA COSTA SE HIZO TACO
+                <p className="tagline-small leading-tight whitespace-nowrap" style={{color: '#732621'}}>
+                  LA CALLE SE HIZO MESA, LA COSTA SE HIZO TACO.
                 </p>
               </div>
             </ScrollReveal>
