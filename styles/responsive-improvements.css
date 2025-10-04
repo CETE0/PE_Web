@@ -1,0 +1,439 @@
+/* 
+  ===============================================
+  PUERTO ESCONDIDO - MEJORAS RESPONSIVE
+  ===============================================
+  
+  Este archivo contiene mejoras CSS para hacer el sitio
+  completamente responsive sin romper el diseño actual.
+  
+  Importar este archivo DESPUÉS de globals.css
+*/
+
+/* ===============================================
+   SISTEMA DE BREAKPOINTS MEJORADO
+   =============================================== */
+
+:root {
+  /* Breakpoints estándar */
+  --breakpoint-xs: 320px;   /* Móviles pequeños */
+  --breakpoint-sm: 640px;   /* Móviles grandes */
+  --breakpoint-md: 768px;   /* Tablets */
+  --breakpoint-lg: 1024px;  /* Desktop pequeño */
+  --breakpoint-xl: 1280px;  /* Desktop normal */
+  --breakpoint-2xl: 1536px; /* Desktop grande */
+}
+
+/* ===============================================
+   VARIABLES RESPONSIVE PARA IMÁGENES
+   =============================================== */
+
+/* Mobile First - Valores por defecto para móviles */
+:root {
+  /* Escala de imágenes principales */
+  --taco-scale-responsive: 0.8;
+  --vasos-scale-responsive: 0.85;
+  
+  /* Posición de imágenes principales */
+  --taco-position-x-responsive: 0px;
+  --taco-position-y-responsive: 0px;
+  --vasos-position-x-responsive: 0px;
+  --vasos-position-y-responsive: 0px;
+  
+  /* Opacidad para reducir prominencia en móvil */
+  --image-opacity-mobile: 0.7;
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --taco-scale-responsive: 1.3;
+    --vasos-scale-responsive: 1.15;
+    --taco-position-x-responsive: 40px;
+    --taco-position-y-responsive: -20px;
+    --vasos-position-x-responsive: 20px;
+    --vasos-position-y-responsive: 0px;
+    --image-opacity-mobile: 0.9;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  :root {
+    /* Usar valores originales del sistema avanzado */
+    --taco-scale-responsive: var(--taco-scale);
+    --vasos-scale-responsive: var(--vasos-scale);
+    --taco-position-x-responsive: var(--taco-position-x);
+    --taco-position-y-responsive: var(--taco-position-y);
+    --vasos-position-x-responsive: var(--vasos-position-x);
+    --vasos-position-y-responsive: var(--vasos-position-y);
+    --image-opacity-mobile: 1;
+  }
+}
+
+/* ===============================================
+   ESPACIADO RESPONSIVE PARA SECCIONES
+   =============================================== */
+
+/* Mobile (hasta 640px) */
+@media (max-width: 640px) {
+  :root {
+    /* Reducir espaciados para móviles pequeños */
+    --cada-taco-toca-padding-y-mobile: 1rem;
+    --menu-padding-y-mobile: 1.5rem;
+    --reservas-padding-y-mobile: 1.5rem;
+    --ubicacion-padding-y-mobile: 2rem;
+  }
+  
+  .section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Tablet (641px - 1023px) */
+@media (min-width: 641px) and (max-width: 1023px) {
+  :root {
+    /* Valores intermedios para tablets */
+    --cada-taco-toca-padding-y-mobile: 1.5rem;
+    --menu-padding-y-mobile: 2.5rem;
+    --reservas-padding-y-mobile: 2.5rem;
+    --ubicacion-padding-y-mobile: 3.5rem;
+  }
+  
+  .section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ===============================================
+   MEJORAS PARA HEADER RESPONSIVE
+   =============================================== */
+
+/* Simplificar el clip-path en tablets y móviles */
+@media (max-width: 1023px) {
+  .header-toldo {
+    clip-path: none !important;
+    border-bottom: 3px solid var(--color-pe-accent);
+  }
+}
+
+/* Ajustar altura del header en móviles */
+@media (max-width: 768px) {
+  header {
+    height: 60px !important;
+  }
+}
+
+/* ===============================================
+   HERO SECTION RESPONSIVE
+   =============================================== */
+
+@media (max-width: 768px) {
+  /* Hero más alto en móviles para mejor impacto visual */
+  #inicio {
+    min-height: 100vh !important;
+    padding-top: 80px; /* Espacio para el header */
+  }
+  
+  /* Ajustar tamaño del logo principal */
+  #inicio .logo-principal {
+    width: 280px !important;
+    max-width: 80vw;
+  }
+  
+  /* Reducir y reposicionar el taco grande */
+  #inicio .taco-hero {
+    transform: scale(0.6) translateX(-20%);
+    opacity: 0.6;
+  }
+  
+  /* Tagline más legible */
+  .tagline-small {
+    font-size: 0.875rem !important;
+    background-color: rgba(251, 255, 238, 0.9);
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+}
+
+/* ===============================================
+   GRIDS RESPONSIVE MEJORADOS
+   =============================================== */
+
+/* Grid de 3 columnas con punto medio para tablets */
+.grid-3-cols-responsive {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-3-cols-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3-cols-responsive {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* ===============================================
+   IMÁGENES DECORATIVAS RESPONSIVE
+   =============================================== */
+
+/* Ocultar o reducir imágenes decorativas en móviles */
+@media (max-width: 640px) {
+  /* Artesano y salsa picante */
+  .decorative-image {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+  
+  /* Opción: ocultar completamente en móviles muy pequeños */
+  @media (max-width: 375px) {
+    .decorative-image-optional {
+      display: none;
+    }
+  }
+}
+
+/* ===============================================
+   FORMULARIO DE RESERVAS RESPONSIVE
+   =============================================== */
+
+@media (max-width: 768px) {
+  /* Stack vertical para todos los campos */
+  #reservas form {
+    max-width: 100%;
+  }
+  
+  #reservas .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Campos de formulario más grandes para touch */
+  .form-field-bold {
+    padding: 1rem 0;
+    font-size: 1rem;
+    min-height: 44px; /* Touch target mínimo */
+  }
+  
+  /* Botón de reservar full width */
+  .btn-reservar {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Tablet: 2 columnas para algunos campos */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #reservas .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  #reservas .grid-cols-3 > :last-child {
+    grid-column: span 2;
+  }
+}
+
+/* ===============================================
+   UBICACIÓN Y MAPA RESPONSIVE
+   =============================================== */
+
+@media (max-width: 768px) {
+  /* Stack vertical para info y mapa */
+  #ubicacion .grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+  
+  /* Mapa con aspect ratio fijo */
+  #ubicacion iframe {
+    height: 300px !important;
+  }
+  
+  /* Información centrada */
+  .contact-info {
+    text-align: center;
+  }
+}
+
+/* ===============================================
+   FOOTER RESPONSIVE
+   =============================================== */
+
+@media (max-width: 768px) {
+  footer .grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 1.5rem;
+  }
+  
+  footer .footer-label {
+    margin-top: 1rem;
+  }
+  
+  /* Logo centrado */
+  footer img {
+    margin: 0 auto;
+  }
+}
+
+/* ===============================================
+   TIPOGRAFÍA RESPONSIVE
+   =============================================== */
+
+/* Ajustar tamaños de fuente para legibilidad móvil */
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 2rem !important;
+  }
+  
+  .section-title {
+    font-size: 2.5rem !important;
+    line-height: 1.1;
+  }
+  
+  .description-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  
+  .description-text-large {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .main-title {
+    font-size: 3rem !important;
+  }
+  
+  .section-title {
+    font-size: 4rem !important;
+  }
+}
+
+/* ===============================================
+   UTILIDADES RESPONSIVE
+   =============================================== */
+
+/* Ocultar en móviles */
+.hide-mobile {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+/* Ocultar en desktop */
+.hide-desktop {
+  @media (min-width: 769px) {
+    display: none !important;
+  }
+}
+
+/* Solo visible en tablets */
+.tablet-only {
+  display: none !important;
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    display: block !important;
+  }
+}
+
+/* Contenedor con overflow controlado para móviles */
+.overflow-x-safe {
+  @media (max-width: 768px) {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+}
+
+/* ===============================================
+   ANIMACIONES RESPONSIVE
+   =============================================== */
+
+/* Reducir o desactivar animaciones en móviles para mejor performance */
+@media (max-width: 768px) {
+  /* Reducir duración de animaciones */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+  
+  /* Desactivar parallax en móviles */
+  .parallax {
+    transform: none !important;
+  }
+}
+
+/* Respetar preferencias de usuario para animaciones reducidas */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===============================================
+   MEJORAS DE ACCESIBILIDAD
+   =============================================== */
+
+/* Focus visible mejorado para navegación por teclado */
+*:focus-visible {
+  outline: 3px solid var(--color-pe-accent);
+  outline-offset: 2px;
+}
+
+/* Touch targets mínimos para móviles */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ===============================================
+   PERFORMANCE OPTIMIZATIONS
+   =============================================== */
+
+/* Usar GPU para transformaciones */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Lazy loading para imágenes fuera del viewport */
+img[loading="lazy"] {
+  background: var(--color-pe-bg);
+}
+
+/* ===============================================
+   PRINT STYLES
+   =============================================== */
+
+@media print {
+  /* Ocultar elementos innecesarios para impresión */
+  header, footer, .btn-primary, .btn-reservar {
+    display: none !important;
+  }
+  
+  /* Ajustar colores para impresión */
+  * {
+    background: white !important;
+    color: black !important;
+  }
+}

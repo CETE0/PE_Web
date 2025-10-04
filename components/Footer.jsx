@@ -31,8 +31,8 @@ export default function Footer() {
               <div>
                 <h3 className="footer-label text-xs">DIRECCIÓN</h3>
                 <p className="footer-info text-sm">
-                  Quilpué<br />
-                  Valparaíso, Chile
+                  Avenida los carrera 1765<br />
+                  Strip center IPA
                 </p>
               </div>
               
@@ -49,8 +49,8 @@ export default function Footer() {
               <div>
                 <h3 className="footer-label text-xs">CONTACTO</h3>
                 <p className="footer-info text-sm">
-                  +56 9 1234 5678<br />
-                  info@puertoescondido.cl
+                  +56 9 5539 2622<br />
+                  puertoescondidotacos@gmail.com
                 </p>
               </div>
               
@@ -58,13 +58,13 @@ export default function Footer() {
               <div>
                 <h3 className="footer-label text-xs">REDES</h3>
                 <a
-                  href="https://instagram.com/puertoescondido_cl"
+                  href="https://instagram.com/puerto.escondido.cl"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer-info footer-link-hover transition-colors duration-300 inline-block text-sm"
                   aria-label="Instagram"
                 >
-                  @puertoescondido_cl
+                  @puerto.escondido.cl
                 </a>
               </div>
             </div>

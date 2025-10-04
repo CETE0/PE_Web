@@ -1,0 +1,147 @@
+/* 
+  ===============================================
+  PUERTO ESCONDIDO - FIX ESPECÍFICO PARA HERO MÓVIL
+  ===============================================
+  
+  Archivo adicional para corregir problemas específicos del hero
+  sin afectar otras secciones.
+  
+  Agregar DESPUÉS de mobile-only.css
+*/
+
+/* ===============================================
+   HERO MÓVIL - LAYOUT OPTIMIZADO SEGÚN REQUERIMIENTOS
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Hero con altura reducida para menos distancia entre secciones */
+  #inicio {
+    min-height: 60vh !important; /* Reducido de 100vh a 60vh */
+    padding-top: 80px !important; /* Espacio para header + margen */
+    display: block !important;
+    position: relative !important;
+  }
+
+  /* Container del hero */
+  #inicio > .container {
+    position: relative !important;
+    min-height: calc(60vh - 80px) !important; /* Reducido proporcionalmente */
+    width: 100% !important;
+    padding: 0.5rem !important; /* Menos padding interno */
+  }
+  
+  /* Logo "Puerto Escondido" - Bajado 2rem adicionales */
+  #inicio > .container > div:first-child {
+    position: absolute !important;
+    top: 5.5rem !important; /* Bajado 2rem adicionales */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100% !important;
+    text-align: center !important;
+    z-index: 10 !important;
+  }
+  
+  /* Logo imagen - tamaño apropiado */
+  #inicio img[src*="logo alternativo"] {
+    width: 80% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Tagline - Bajado 2rem adicionales */
+  #inicio > .container > div:last-child {
+    position: absolute !important;
+    top: 9rem !important; /* Bajado 2rem adicionales */
+    left: 45% !important; /* Centrado como el logo */
+    transform: translateX(-50%) !important; /* Alineación vertical con el logo */
+    width: 60% !important; /* Ancho controlado */
+    text-align: center !important; /* Centrado como el logo */
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    z-index: 10 !important;
+  }
+  
+  /* Imagen del taco - Bajada 2rem adicionales */
+  #inicio > .container > div:nth-child(2) {
+    position: absolute !important;
+    top: 13rem !important; /* Bajado 2rem adicionales */
+    right: 2rem !important;
+    transform: scale(1) !important; /* Más grande */
+    opacity: 1 !important; /* Más visible */
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Imagen del taco con tamaño más grande */
+  #inicio img[src*="taco"] {
+    width: 350px !important; /* Más grande */
+    max-width: none !important;
+    height: auto !important;
+  }
+  
+  /* Texto del tagline - PLANO, sin efectos */
+  #inicio .tagline-small {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    color: #732621 !important;
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Ajustes para móviles pequeños (iPhone SE, etc) */
+@media (max-width: 375px) {
+  /* Logo bajado 2rem adicionales en móviles pequeños */
+  #inicio > .container > div:first-child {
+    top: 3.5rem !important; /* Bajado 2rem adicionales */
+  }
+  
+  #inicio img[src*="logo alternativo"] {
+    width: 85% !important;
+    max-width: 260px !important;
+  }
+  
+  /* Tagline bajado 2rem adicionales en móviles pequeños */
+  #inicio > .container > div:last-child {
+    top: 8rem !important; /* Bajado 2rem adicionales */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 70% !important;
+    text-align: center !important;
+  }
+
+  /* Taco bajado 2rem adicionales en móviles pequeños */
+  #inicio > .container > div:nth-child(2) {
+    top: 8rem !important; /* Bajado 2rem adicionales */
+    transform: scale(0.5) !important;
+    right: 0.1rem !important;
+  }
+  
+  #inicio .tagline-small {
+    font-size: 0.85rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Ajustes para landscape móvil */
+@media (max-width: 1023px) and (orientation: landscape) {
+  #inicio {
+    min-height: auto !important;
+    padding: 2rem 0 !important;
+  }
+  
+  #inicio > .container {
+    min-height: auto !important;
+    padding: 1.5rem 1rem !important;
+  }
+  
+  #inicio img[src*="logo alternativo"] {
+    max-width: 250px !important;
+  }
+}

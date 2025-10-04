@@ -42,7 +42,7 @@ const { createReservation } = require('./lib/resos/bookings');
 
 const formData = {
   nombre: 'Juan Pérez',
-  telefono: '+56912345678',
+  telefono: '+56955392622',
   fecha: '2024-12-25',
   hora: '19:00',
   personas: '4'
@@ -72,7 +72,7 @@ Endpoint principal para crear reservas desde el frontend.
 ```json
 {
   "nombre": "Juan Pérez",
-  "telefono": "+56912345678",
+  "telefono": "+56955392622",
   "fecha": "2024-12-25",
   "hora": "19:00",
   "personas": "4"
@@ -91,7 +91,7 @@ Endpoint principal para crear reservas desde el frontend.
     "people": 4,
     "guest": {
       "name": "Juan Pérez",
-      "phone": "+56912345678"
+      "phone": "+56955392622"
     }
   }
 }

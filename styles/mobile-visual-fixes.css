@@ -1,0 +1,392 @@
+/* 
+  ===============================================
+  PUERTO ESCONDIDO - CORRECCIONES VISUALES MÓVIL
+  ===============================================
+  
+  Correcciones específicas para los problemas visuales
+  identificados en las imágenes del usuario
+*/
+
+/* ===============================================
+   SECCIÓN "CADA TACO TOCA" - TEXTO COMPLETO + IMÁGENES EN EXTREMOS
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Sección con padding adecuado para mejor separación */
+  #cada-taco-toca {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 2rem 1rem !important; /* Más padding para mejor separación */
+    position: relative !important;
+  }
+  
+  /* Grid vertical: contenido con más espacio entre elementos */
+  #cada-taco-toca .grid {
+    display: block !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    position: relative !important;
+  }
+
+  /* Contenido central - usa todo el ancho con más espacio */
+  #cada-taco-toca .grid > div:nth-child(2) {
+    display: block !important;
+    text-align: center !important;
+    padding: 1rem !important; /* Más padding interno */
+    width: 100% !important;
+    margin-bottom: 2.5rem !important; /* Más separación abajo */
+  }
+  
+  /* Título usando todo el ancho */
+  #cada-taco-toca h2 {
+    margin-bottom: 2rem !important; /* Más espacio debajo del título */
+    line-height: 1.1 !important;
+    font-size: clamp(1.75rem, 7vw, 2.25rem) !important;
+    width: 100% !important;
+  }
+
+  /* Descripción usando todo el ancho */
+  #cada-taco-toca .description-text {
+    margin-bottom: 2.5rem !important; /* Más espacio debajo de la descripción */
+    padding: 0 1rem !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    width: 100% !important;
+  }
+  
+  /* Área del botón con imágenes - layout flex */
+  #cada-taco-toca .grid > div:nth-child(2) {
+    position: relative !important;
+  }
+  
+  /* Área del botón con espacio adecuado */
+  #cada-taco-toca .grid > div:nth-child(2)::after {
+    content: '' !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 60px !important; /* Menos espacio ya que hay menos elementos */
+    position: relative !important;
+    margin-top: 1rem !important;
+  }
+  
+  /* Botón centrado */
+  #cada-taco-toca .btn-outline {
+    margin: 0 auto !important;
+    min-width: 180px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  /* Imagen izquierda - extremo izquierdo mejor posicionada */
+  #cada-taco-toca .grid > div:first-child {
+    position: absolute !important;
+    left: 0.25rem !important; /* Más pegado al borde */
+    bottom: 3rem !important; /* Más arriba, mejor visibilidad */
+    z-index: 5 !important;
+  }
+
+  /* Imagen derecha - extremo derecho mejor posicionada */
+  #cada-taco-toca .grid > div:last-child {
+    position: absolute !important;
+    right: 0.25rem !important; /* Más pegado al borde */
+    bottom: 3rem !important; /* Más arriba, mejor visibilidad */
+    z-index: 5 !important;
+  }
+  
+  /* Imágenes decorativas más grandes y mejor posicionadas */
+  #cada-taco-toca img[alt*="Artesano"],
+  #cada-taco-toca img[alt*="Salsa"] {
+    width: 120px !important; /* Más grandes */
+    height: auto !important;
+    opacity: 0.8 !important; /* Más visibles */
+    margin: 0 !important;
+    display: block !important;
+  }
+}
+
+/* ===============================================
+   SECCIÓN MENÚ - TACO SOBRE EL BOTÓN
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Sección menú con más padding para mejor separación */
+  #menu {
+    padding: 3rem 1rem !important; /* Más padding para mejor separación */
+  }
+
+  /* Grid centrado con más espacio entre elementos */
+  #menu .grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2.5rem !important; /* Más espacio entre elementos */
+    max-width: 600px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Contenido centrado cuando no hay imagen */
+  #menu .order-2 {
+    order: 1 !important;
+    text-align: center !important;
+  }
+
+  /* Título del menú centrado con más espacio */
+  #menu .section-title {
+    margin-bottom: 2rem !important; /* Más espacio debajo del título */
+    line-height: 0.9 !important;
+    font-size: clamp(2rem, 8vw, 2.5rem) !important;
+    text-align: center !important;
+  }
+
+  /* Descripción centrada con más espacio */
+  #menu .description-text-large {
+    margin-bottom: 2.5rem !important; /* Más espacio debajo de la descripción */
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+
+  /* Botón del menú centrado con más espacio arriba */
+  #menu .btn-menu-cta {
+    margin: 1.5rem auto 0 !important; /* Más espacio arriba del botón */
+    min-width: 200px !important;
+    padding: 0.75rem 1.5rem !important;
+    display: block !important;
+  }
+  
+  /* Contenedor de imagen - OCULTO en móvil */
+  #menu .order-1 {
+    display: none !important;
+  }
+  
+  /* Imagen del taco - OCULTA en móvil */
+  #menu img[src*="taco"] {
+    display: none !important;
+  }
+}
+
+/* ===============================================
+   SECCIÓN RESERVAS - TÍTULO ARRIBA + IMAGEN VASOS CENTRADA
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Sección reservas con más espacio y centrada */
+  #reservas {
+    padding: 2.5rem 1rem !important; /* Más padding para mejor separación */
+    text-align: center !important;
+  }
+
+  /* Grid centrado */
+  #reservas > div > div {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Contenedor del título centrado con más separación */
+  #reservas > div > div > div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important; /* Más espacio entre título e imagen */
+    margin-bottom: 2rem !important; /* Más separación abajo */
+  }
+
+  /* Título centrado y más compacto */
+  #reservas .section-title {
+    margin-bottom: 0 !important;
+    line-height: 0.9 !important;
+    font-size: clamp(2rem, 8vw, 2.5rem) !important;
+    text-align: center !important;
+  }
+
+  /* Imagen de vasos - OCULTA en móvil */
+  #reservas .img-vasos {
+    display: none !important;
+  }
+
+  /* Ocultar contenedor de imagen de vasos en móvil */
+  #reservas > div > div > div:last-child {
+    display: none !important;
+  }
+
+  /* Formulario centrado */
+  #reservas form {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 1rem auto 0 !important;
+  }
+
+  /* Espaciado entre grupos aumentado */
+  #reservas .space-y-8 > div,
+  #reservas .space-y-6 > div {
+    margin-bottom: 2rem !important; /* Más espacio entre grupos de campos */
+  }
+
+  /* Campos más compactos pero usables */
+  #reservas input,
+  #reservas select {
+    width: 100% !important;
+    padding: 0.75rem 0 !important;
+    font-size: 1rem !important;
+    border: none !important;
+    border-bottom: 2px solid #732621 !important;
+    background: transparent !important;
+    margin-bottom: 0.25rem !important;
+    min-height: 44px !important;
+  }
+
+  /* Labels más compactos */
+  #reservas label {
+    display: block !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: #732621 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Botón centrado con más espacio arriba */
+  #reservas .btn-reservar {
+    width: auto !important;
+    min-width: 200px !important;
+    max-width: 100% !important;
+    padding: 0.875rem 1.5rem !important;
+    margin: 2.5rem auto 0 !important; /* Más espacio arriba del botón */
+    display: block !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ===============================================
+   AJUSTES PARA PANTALLAS MUY PEQUEÑAS
+   =============================================== */
+@media (max-width: 375px) {
+  /* Reducir padding en pantallas pequeñas */
+  #cada-taco-toca,
+  #menu,
+  #reservas {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  /* Formulario más compacto */
+  #reservas form {
+    padding: 0 0.5rem !important;
+  }
+  
+  /* Botón más pequeño */
+  #reservas .btn-reservar {
+    min-width: 200px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Ocultar imagen de vasos también en móviles pequeños */
+  #reservas .img-vasos {
+    display: none !important;
+  }
+
+  /* Imágenes decorativas más pequeñas pero visibles en móviles pequeños */
+  #cada-taco-toca img[alt*="Artesano"],
+  #cada-taco-toca img[alt*="Salsa"] {
+    width: 100px !important;
+  }
+
+  /* Área del botón más pequeña en móviles pequeños */
+  #cada-taco-toca .grid > div:nth-child(2)::after {
+    height: 50px !important;
+  }
+
+  /* Posición de imágenes en móviles pequeños */
+  #cada-taco-toca .grid > div:first-child {
+    bottom: 1.25rem !important;
+  }
+
+  #cada-taco-toca .grid > div:last-child {
+    bottom: 1.25rem !important;
+  }
+}
+
+/* ===============================================
+   FOOTER - ASEGURAR VISIBILIDAD EN MÓVIL
+   =============================================== */
+@media (max-width: 1023px) {
+  footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background-color: #732621 !important;
+    color: white !important;
+  }
+
+  footer .container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  footer .grid {
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  footer .footer-label,
+  footer .footer-info {
+    color: white !important;
+    opacity: 1 !important;
+  }
+
+  /* Asegurar que el logo sea visible */
+  footer img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ===============================================
+   RESET DE TRANSFORMACIONES PROBLEMÁTICAS
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Reset de todas las transformaciones que causan problemas */
+  section .absolute,
+  section .relative {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+  
+  /* Excepto en el hero que ya está arreglado */
+  #inicio .absolute {
+    /* Mantener las correcciones del hero */
+  }
+  
+  /* Asegurar visibilidad de todas las secciones */
+  section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Containers visibles */
+  .container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Grids funcionales */
+  .grid {
+    display: grid !important;
+    visibility: visible !important;
+  }
+}

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 /**
  * LoadingScreen - Pantalla de carga minimalista
- * Diseño simple con logo a la izquierda y taco a la derecha
+ * Diseño con logo centrado en móvil, logo + taco en desktop
  * Animaciones suaves de fade-in y fade-out
  */
 export default function LoadingScreen() {
@@ -30,16 +30,16 @@ export default function LoadingScreen() {
       style={{backgroundColor: '#FBFFEE'}}
       aria-hidden
     >
-      <div className="flex items-center justify-between w-full max-w-5xl">
-        {/* Logo alternativo a la izquierda */}
+      <div className="relative w-full max-w-5xl h-full flex items-center justify-center">
+        {/* Logo alternativo centrado - solo en móvil */}
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ 
-            opacity: showContent ? 1 : 0, 
-            x: showContent ? 0 : -100 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{
+            opacity: showContent ? 1 : 0,
+            scale: showContent ? 1 : 0.8
           }}
-          transition={{ 
-            duration: 1, 
+          transition={{
+            duration: 1,
             delay: 0.5,
             ease: "easeOut"
           }}
@@ -56,19 +56,19 @@ export default function LoadingScreen() {
           />
         </motion.div>
 
-        {/* Taco 2 a la derecha */}
+        {/* Taco 2 - A la derecha en desktop, oculto en móvil */}
         <motion.div
           initial={{ opacity: 0, x: 100 }}
-          animate={{ 
-            opacity: showContent ? 1 : 0, 
-            x: showContent ? 0 : 100 
+          animate={{
+            opacity: showContent ? 1 : 0,
+            x: showContent ? 0 : 100
           }}
-          transition={{ 
-            duration: 1, 
+          transition={{
+            duration: 1,
             delay: 0.7,
             ease: "easeOut"
           }}
-          className="flex-shrink-0"
+          className="hidden md:block flex-shrink-0"
         >
           <Image
             src="/assets/Elementos Gráficos/taco 2.png"

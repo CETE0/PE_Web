@@ -1,0 +1,605 @@
+/* 
+  ===============================================
+  PUERTO ESCONDIDO - ADAPTACIÓN MÓVIL ÚNICAMENTE
+  ===============================================
+  
+  Este archivo SOLO contiene reglas para móviles y tablets.
+  NO modifica NADA del diseño desktop actual.
+  
+  Importar este archivo DESPUÉS de globals.css en tu _app.js:
+  import '../styles/globals.css'
+  import '../styles/mobile-only.css'
+*/
+
+/* ===============================================
+   SOLO SE APLICA EN MÓVILES Y TABLETS (máx 1023px)
+   Desktop (1024px+) mantiene el diseño actual
+   =============================================== */
+
+/* ===============================================
+   HEADER - ADAPTACIÓN MÓVIL
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Simplificar el header en móviles manteniendo los enlaces */
+  header {
+    height: 70px !important;
+    padding: 0 !important;
+  }
+  
+  /* Quitar el clip-path del toldo en móviles */
+  header > div {
+    clip-path: none !important;
+    height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Container del header */
+  header .container-header {
+    padding: 0 1rem !important;
+    width: 100% !important;
+  }
+  
+  /* Reorganizar navegación en móviles */
+  header nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+  
+  /* Links más pequeños en móvil pero legibles */
+  .nav-link-light {
+    font-size: 0.875rem !important;
+    padding: 0.25rem 0.5rem !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Botón contacto más pequeño */
+  .btn-contact-light {
+    padding: 0.25rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Para móviles muy pequeños - navegación compacta */
+@media (max-width: 640px) {
+  header {
+    height: auto !important;
+    min-height: 60px !important;
+  }
+  
+  header > div {
+    height: auto !important;
+    min-height: 60px !important;
+    padding: 0.75rem 0 !important;
+  }
+  
+  header nav {
+    gap: 0.25rem !important;
+  }
+  
+  .nav-link-light, .btn-contact-light {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* ===============================================
+   HERO SECTION - ADAPTACIÓN MÓVIL
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Ajustar altura del hero y hacerlo flex para centrar contenido */
+  #inicio {
+    min-height: 100vh !important;
+    padding-top: 80px !important; /* Espacio para header */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Container del hero con layout flex */
+  #inicio .container {
+    position: relative !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 2rem 1rem !important;
+  }
+  
+  /* Logo principal - posición relativa y centrado */
+  #inicio .container > div:first-child {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+    z-index: 2 !important;
+  }
+  
+  #inicio img[alt="Puerto Escondido"] {
+    width: 90% !important;
+    max-width: 350px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  
+  /* Taco del hero - mover al fondo con posición absoluta */
+  #inicio .container > div:nth-child(2) {
+    position: absolute !important;
+    top: 50% !important;
+    right: -20% !important;
+    transform: translateY(-50%) scale(0.5) !important;
+    opacity: 0.15 !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Tagline - posición relativa debajo del logo */
+  #inicio .container > div:last-child {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    text-align: center !important;
+    background: rgba(251, 255, 238, 0.95) !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+    margin-top: 2rem !important;
+    z-index: 2 !important;
+  }
+  
+  .tagline-small {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* ===============================================
+   SECCIÓN "CADA TACO TOCA" - MÓVIL
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Ajustar padding de la sección */
+  #cada-taco-toca {
+    padding: 3rem 0 !important;
+  }
+  
+  /* Stack vertical en móviles */
+  #cada-taco-toca .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Reorganizar orden de elementos */
+  #cada-taco-toca .order-1 { order: 1 !important; }
+  #cada-taco-toca .order-2 { order: 2 !important; }
+  #cada-taco-toca .order-3 { order: 3 !important; }
+  
+  /* Título centrado y responsive */
+  .main-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+    white-space: normal !important;
+    transform: none !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Descripción centrada */
+  .description-text {
+    font-size: 1rem !important;
+    padding: 0 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Imágenes decorativas más pequeñas y centradas */
+  #cada-taco-toca img[alt*="Artesano"],
+  #cada-taco-toca img[alt*="Salsa"] {
+    width: 180px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Quitar transformaciones en móviles */
+  #cada-taco-toca .relative {
+    transform: none !important;
+  }
+  
+  /* Botón centrado y con ancho apropiado */
+  #cada-taco-toca .btn-outline {
+    width: auto !important;
+    min-width: 200px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+}
+
+/* Imágenes decorativas apropiadas para móviles pequeños */
+@media (max-width: 480px) {
+  #cada-taco-toca img[alt*="Artesano"],
+  #cada-taco-toca img[alt*="Salsa"] {
+    width: 160px !important;
+    opacity: 1 !important;
+  }
+  
+  /* Imagen del menú un poco más pequeña en móviles pequeños */
+  #menu img[src*="taco"] {
+    max-width: 320px !important;
+  }
+}
+
+/* ===============================================
+   SECCIÓN MENÚ - ADAPTACIÓN MÓVIL
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Ajustar padding de la sección */
+  #menu {
+    padding: 3rem 0 !important;
+    overflow: hidden !important;
+  }
+  
+  /* Stack vertical */
+  #menu .grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  /* Reorganizar orden - texto primero, imagen después */
+  #menu .order-1 { order: 2 !important; }
+  #menu .order-2 { order: 1 !important; }
+  
+  /* Título más pequeño pero legible */
+  #menu .section-title {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: 0.95 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Descripción del menú */
+  .description-text-large {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Contenedor del taco del menú */
+  #menu > div > div > div:last-child {
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Contenedor de la imagen del taco - centrado */
+  #menu .figure-wrap {
+    position: relative !important;
+    transform: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Taco del menú - tamaño apropiado y centrado */
+  #menu .img-taco {
+    transform: none !important;
+    width: 80% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+  
+  /* Botón del menú centrado */
+  .btn-menu-cta {
+    width: auto !important;
+    min-width: 250px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+}
+
+/* ===============================================
+   SECCIÓN RESERVAS - FORMULARIO MÓVIL
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Grid de una columna */
+  #reservas .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Título más pequeño */
+  #reservas .section-title {
+    font-size: 2.5rem !important;
+  }
+  
+  /* Formulario: campos en stack */
+  #reservas form .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Campos del formulario con mejor espaciado */
+  .form-field-bold {
+    padding: 1rem 0 !important;
+    font-size: 1rem !important;
+    min-height: 50px !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Labels más legibles con espaciado */
+  .form-label-bold {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Espaciado entre grupos de campos */
+  #reservas form > div {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Botón reservar con ancho apropiado */
+  .btn-reservar {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 2rem auto 0 !important;
+    padding: 1rem 2rem !important;
+    font-size: 0.9rem !important;
+    display: block !important;
+  }
+  
+  /* Ocultar imagen de vasos en móviles */
+  #reservas .img-vasos {
+    display: none !important;
+  }
+  
+  /* Ocultar contenedor de vasos completamente */
+  #reservas > div > div > div:last-child {
+    display: none !important;
+  }
+}
+
+/* Campos fecha/hora/personas - mejor distribución en tablets */
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Grid de fecha/hora/personas en 2 columnas para tablets */
+  #reservas .grid-cols-1.md\\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  
+  /* Campo de personas que ocupe toda la fila en tablets pequeños */
+  #reservas .grid-cols-1.md\\:grid-cols-3 > div:last-child {
+    grid-column: span 2 !important;
+  }
+  
+  /* Botón del formulario centrado en tablets */
+  #reservas .btn-reservar {
+    max-width: 250px !important;
+  }
+}
+
+/* ===============================================
+   SECCIÓN UBICACIÓN - MÓVIL
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Stack vertical */
+  #ubicacion .grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  /* Título más pequeño y sin margen negativo */
+  #ubicacion .section-title {
+    font-size: 2.5rem !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Información centrada en móvil */
+  #ubicacion .contact-label,
+  #ubicacion .contact-info {
+    text-align: center !important;
+  }
+  
+  /* Mapa con altura fija */
+  #ubicacion iframe {
+    height: 300px !important;
+    width: 100% !important;
+  }
+  
+  /* Borde del mapa más delgado */
+  #ubicacion .border-4 {
+    border-width: 2px !important;
+  }
+}
+
+/* ===============================================
+   FOOTER - LAYOUT COMPACTO HORIZONTAL
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Grid compacto en 2 filas */
+  footer .grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+    text-align: center !important;
+  }
+  
+  /* Logo en la primera fila, centrado */
+  footer .grid > div:first-child {
+    grid-column: span 3 !important;
+    justify-content: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Logo más pequeño */
+  footer img {
+    width: 120px !important;
+    height: auto !important;
+  }
+  
+  /* Información en 3 columnas compactas */
+  footer .grid > div:not(:first-child) {
+    padding: 0.5rem !important;
+  }
+  
+  /* Texto más pequeño y compacto */
+  .footer-label {
+    font-size: 0.6rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .footer-info {
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Copyright más compacto */
+  footer .border-t {
+    margin-top: 1rem !important;
+    padding-top: 0.75rem !important;
+  }
+  
+  footer .border-t p {
+    font-size: 0.65rem !important;
+  }
+}
+
+/* Footer aún más compacto en móviles pequeños */
+@media (max-width: 640px) {
+  footer .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+  
+  /* Logo ocupa 2 columnas */
+  footer .grid > div:first-child {
+    grid-column: span 2 !important;
+  }
+  
+  /* Información en 2 columnas, más compacta */
+  footer .grid > div:not(:first-child) {
+    padding: 0.25rem !important;
+  }
+  
+  .footer-label {
+    font-size: 0.55rem !important;
+  }
+  
+  .footer-info {
+    font-size: 0.65rem !important;
+  }
+}
+
+/* ===============================================
+   AJUSTES GENERALES PARA MÓVILES
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Reducir padding de secciones */
+  .section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Container con menos padding lateral */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    max-width: 100% !important;
+  }
+  
+  /* Prevenir overflow horizontal */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Imágenes que no se salgan del viewport */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Reset de posiciones absolutas excepto donde sea necesario */
+  section:not(#inicio) .absolute {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+  
+  /* Asegurar que los grids sean responsive */
+  .grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* ===============================================
+   UTILIDADES PARA DEBUG (ELIMINAR EN PRODUCCIÓN)
+   =============================================== */
+/* 
+@media (max-width: 1023px) {
+  * {
+    outline: 1px solid red !important;
+  }
+}
+*/
+
+/* ===============================================
+   OPTIMIZACIONES DE PERFORMANCE MÓVIL
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Reducir animaciones para mejor performance */
+  * {
+    animation-duration: 0.2s !important;
+    transition-duration: 0.15s !important;
+  }
+  
+  /* Desactivar efectos pesados */
+  .drop-shadow-lg {
+    filter: none !important;
+  }
+  
+  /* Simplificar transforms */
+  .figure-wrap {
+    overflow: hidden !important;
+  }
+}
+
+/* ===============================================
+   PARCHE PARA ELEMENTOS ESPECÍFICOS QUE SE SALEN
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Asegurar que nada cause scroll horizontal */
+  #menu > div > div > div:last-child,
+  #reservas > div > div > div:last-child {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Controlar imágenes grandes del sistema avanzado */
+  .img-taco,
+  .img-vasos {
+    position: relative !important;
+    transform: none !important;
+    max-width: 100% !important;
+  }
+}

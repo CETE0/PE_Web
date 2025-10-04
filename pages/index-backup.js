@@ -39,7 +39,7 @@ export default function Home() {
                 addressRegion: "Valparaíso",
                 addressCountry: "CL",
               },
-              telephone: "+56912345678",
+              telephone: "+56955392622",
               servesCuisine: ["Mexicana", "Tacos"],
               url: "https://puerto-escondido.example.com",
             }),
@@ -330,7 +330,7 @@ export default function Home() {
                     </div>
                     <div>
                       <span className="form-label">Teléfono</span>
-                      <p className="paragraph">+56 9 1234 5678</p>
+                      <p className="paragraph">+56 9 5539 2622</p>
                     </div>
                   </div>
                 </div>

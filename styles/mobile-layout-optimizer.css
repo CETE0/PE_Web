@@ -1,0 +1,228 @@
+/* 
+  ===============================================
+  PUERTO ESCONDIDO - OPTIMIZADOR DE LAYOUT MÓVIL
+  ===============================================
+  
+  Optimizaciones finales de diagramación para móviles
+  basadas en análisis crítico de las imágenes
+*/
+
+/* ===============================================
+   OPTIMIZACIONES GENERALES DE ESPACIADO
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Espaciado general entre secciones para mejor flujo */
+  .section {
+    padding-top: 2rem !important; /* Más espacio entre secciones */
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Reducir distancia específica entre hero y segunda sección - mínima pero con algo de separación */
+  #inicio {
+    margin-bottom: -2rem !important; /* Menos overlay negativo para más separación natural */
+  }
+
+  #cada-taco-toca {
+    padding-top: 1rem !important; /* Algo de separación arriba */
+  }
+  
+  /* Optimizar containers para mejor uso del espacio */
+  .container {
+    padding-left: 1rem !important; /* Más padding lateral */
+    padding-right: 1rem !important;
+  }
+}
+
+/* ===============================================
+   JERARQUÍA VISUAL MEJORADA
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Títulos principales con mejor proporción */
+  .main-title,
+  .section-title {
+    margin-bottom: 1rem !important;
+    line-height: 1 !important;
+  }
+  
+  /* Descripciones más compactas */
+  .description-text,
+  .description-text-large {
+    margin-bottom: 1.25rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Botones con mejor proporción */
+  .btn-outline,
+  .btn-menu-cta {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ===============================================
+   BALANCE VISUAL POR SECCIÓN
+   =============================================== */
+
+/* Hero - Ya optimizado */
+
+/* Cada Taco Toca - Balance mejorado */
+@media (max-width: 1023px) {
+  #cada-taco-toca {
+    padding: 2rem 0.75rem !important;
+  }
+  
+  #cada-taco-toca .grid {
+    gap: 1.25rem !important;
+  }
+}
+
+/* Menú - Imagen protagonista */
+@media (max-width: 1023px) {
+  #menu {
+    padding: 2rem 0.75rem !important;
+  }
+  
+  #menu .grid {
+    gap: 1.25rem !important;
+  }
+  
+  /* Asegurar que la imagen del taco sea protagonista */
+  #menu img[src*="taco"] {
+    width: 95% !important;
+    max-width: 420px !important;
+  }
+}
+
+/* Reservas - Formulario compacto pero usable */
+@media (max-width: 1023px) {
+  #reservas {
+    padding: 2rem 0.75rem !important;
+  }
+  
+  /* Optimizar espaciado del formulario */
+  #reservas form {
+    padding: 0 !important;
+  }
+  
+  #reservas .space-y-8 > div,
+  #reservas .space-y-6 > div {
+    margin-bottom: 1.25rem !important;
+  }
+  
+  /* Campos con altura óptima */
+  #reservas input {
+    padding: 0.625rem 0 !important;
+    min-height: 44px !important;
+  }
+  
+  /* Labels más cercanos a sus campos */
+  #reservas label {
+    margin-bottom: 0.125rem !important;
+  }
+}
+
+/* Ubicación - Compacta */
+@media (max-width: 1023px) {
+  #ubicacion {
+    padding: 2rem 0.75rem !important;
+  }
+  
+  #ubicacion .section-title {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* ===============================================
+   AJUSTES PARA MÓVILES PEQUEÑOS (< 400px)
+   =============================================== */
+@media (max-width: 399px) {
+  /* Padding aún más compacto */
+  .section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  /* Títulos más pequeños */
+  .section-title {
+    font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
+  }
+  
+  /* Imágenes decorativas más pequeñas */
+  #cada-taco-toca img[alt*="Artesano"],
+  #cada-taco-toca img[alt*="Salsa"] {
+    width: 140px !important;
+  }
+  
+  /* Imagen del menú ajustada */
+  #menu img[src*="taco"] {
+    max-width: 280px !important;
+  }
+  
+  /* Botón del formulario más compacto */
+  #reservas .btn-reservar {
+    min-width: 180px !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+}
+
+/* ===============================================
+   OPTIMIZACIONES DE FLUJO VISUAL
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Asegurar transiciones suaves entre secciones */
+  section + section {
+    margin-top: 0 !important;
+  }
+  
+  /* Elementos que deben mantener su jerarquía visual */
+  h1, h2, .main-title, .section-title {
+    font-weight: 700 !important;
+  }
+  
+  /* Optimizar legibilidad de textos */
+  p, .description-text, .description-text-large {
+    color: rgba(115, 38, 33, 0.85) !important;
+  }
+  
+  /* Asegurar que los botones sean touch-friendly */
+  button, .btn-outline, .btn-menu-cta, .btn-reservar {
+    min-height: 44px !important;
+    touch-action: manipulation !important;
+  }
+}
+
+/* ===============================================
+   CORRECCIONES DE OVERFLOW Y POSICIONAMIENTO
+   =============================================== */
+@media (max-width: 1023px) {
+  /* Asegurar que nada se salga del viewport */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Contenedores de imágenes controlados */
+  .figure-wrap,
+  .image-container {
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  /* Grids responsivos */
+  .grid {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Ubicación con más espacio en móvil */
+@media (max-width: 1023px) {
+  #ubicacion {
+    padding: 2.5rem 1rem !important; /* Más padding para mejor separación */
+  }
+}

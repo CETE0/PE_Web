@@ -220,7 +220,7 @@ export default function Home() {
               "@type": "Restaurant",
               name: "Puerto Escondido",
               description:
-                "Taquería: comida callejera mexicana con toque casero y presentaciones cuidadas. Avenida los carrera 1765, Strip center IPA.",
+                "Taquería: comida callejera mexicana con toque casero y presentaciones cuidadas en Quilpué, Chile.",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Quilpué",
@@ -228,7 +228,6 @@ export default function Home() {
                 addressCountry: "CL",
               },
               telephone: "+56955392622",
-              email: "puertoescondidotacos@gmail.com",
               servesCuisine: ["Mexicana", "Tacos"],
               url: "https://puerto-escondido.example.com",
             }),
@@ -296,6 +295,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Sección "Cada Taco Toca" - Estilo Primera Imagen */}
+      <section id="cada-taco-toca" className="relative py-1 lg:py-2 overflow-hidden" style={{
+        backgroundColor: '#FBFFEE',
+        paddingTop: 'var(--cada-taco-toca-padding-x-top)',
+        paddingBottom: 'var(--cada-taco-toca-padding-x-bottom)',
+        paddingLeft: 'var(--cada-taco-toca-padding-y-mobile)',
+        paddingRight: 'var(--cada-taco-toca-padding-y-mobile)'
+      }}>
+        <div className="container">
+          <div className="flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center w-full max-w-6xl mx-auto">
+              
+              {/* Artesano a la Izquierda */}
+              <div className="flex justify-center lg:justify-end order-2 lg:order-1">
+                <FadeInImage delay={0.2}>
+                  <div className="relative transform -rotate-12 hover:rotate-0 transition-transform duration-500">
+                    <Image
+                      src="/assets/Elementos Gráficos/artesano:a 2.png"
+                      alt="Artesano preparando tacos"
+                      width={350}
+                      height={300}
+                      sizes="(min-width: 1024px) 350px, (min-width: 768px) 280px, 240px"
+                      className="w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
+                    />
+                  </div>
+                </FadeInImage>
+              </div>
+
+              {/* Título Central y Descripción */}
+              <div className="text-center order-1 lg:order-2 px-2">
+                <ScrollReveal delay={0.3}>
+                  <h2 className="main-title mb-6" style={{color: '#732621', whiteSpace: 'nowrap', textAlign: 'center', fontSize: 'clamp(2.5rem, 5vw, 4rem)', transform: 'translateX(-18%)'}}>
+                    CADA TACO TOCA
+                  </h2>
+                </ScrollReveal>
+                
+                <ScrollReveal delay={0.5}>
+                  <div className="max-w-md mx-auto">
+                    <p className="description-text mb-6 leading-relaxed text-center" style={{color: 'rgba(115, 38, 33, 0.8)', fontSize: 'clamp(0.9rem, 2vw, 1.1rem)'}}>
+                      Taquería que combina lo mejor de la comida callejera 
+                      mexicana con un toque casero y presentaciones cuidadas, 
+                      trayendo un pedacito de <strong>México a Chile</strong>.
+                    </p>
+                    
+                    <button type="button" className="btn-outline">
+                      Nuestra Historia
+                    </button>
+                  </div>
+                </ScrollReveal>
+              </div>
+
+              {/* Salsa Picante a la Derecha */}
+              <div className="flex justify-center lg:justify-start order-3">
+                <FadeInImage delay={0.4}>
+                  <div className="relative transform rotate-12 hover:rotate-0 transition-transform duration-500">
+                    <Image
+                      src="/assets/Elementos Gráficos/salsa picante.png"
+                      alt="Salsa picante artesanal"
+                      width={350}
+                      height={400}
+                      sizes="(min-width: 1024px) 350px, (min-width: 768px) 280px, 240px"
+                      className="w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
+                    />
+                  </div>
+                </FadeInImage>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Menú - Diseño Bold y Minimalista */}
       <section id="menu" className="section relative py-4 lg:py-6 overflow-visible" style={{
         backgroundColor: '#FBFFEE',
@@ -304,7 +374,7 @@ export default function Home() {
       }}>
         <div className="container flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 items-center w-full max-w-6xl mx-auto">
-
+            
             {/* Contenido Textual */}
             <div className="order-2 lg:order-1 lg:col-span-1">
               <ScrollReveal delay={0.2}>
@@ -313,14 +383,14 @@ export default function Home() {
                   TACOS
                 </h2>
               </ScrollReveal>
-
+              
               <ScrollReveal delay={0.4}>
                 <div className="max-w-md">
                   <p className="description-text-large mb-10 text-left" style={{color: 'rgba(115, 38, 33, 0.8)'}}>
-                    Una carta breve, honesta y rotativa: maíz nixtamalizado,
+                    Una carta breve, honesta y rotativa: maíz nixtamalizado, 
                     salsas hechas en casa y rellenos que respetan el origen.
                   </p>
-
+                  
                   <a
                     href="https://toteat.shop/r/cl/Puerto-Escondido-tacos/21637/checkin/menu"
                     target="_blank"
@@ -357,77 +427,6 @@ export default function Home() {
                   </div>
                 </div>
               </FadeInImage>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sección "Cada Taco Toca" - Estilo Primera Imagen */}
-      <section id="cada-taco-toca" className="relative py-1 lg:py-2 overflow-hidden" style={{
-        backgroundColor: '#FBFFEE',
-        paddingTop: 'var(--cada-taco-toca-padding-x-top)',
-        paddingBottom: 'var(--cada-taco-toca-padding-x-bottom)',
-        paddingLeft: 'var(--cada-taco-toca-padding-y-mobile)',
-        paddingRight: 'var(--cada-taco-toca-padding-y-mobile)'
-      }}>
-        <div className="container">
-          <div className="flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center w-full max-w-6xl mx-auto">
-
-              {/* Artesano a la Izquierda */}
-              <div className="flex justify-center lg:justify-end order-2 lg:order-1">
-                <FadeInImage delay={0.2}>
-                  <div className="relative transform -rotate-12 hover:rotate-0 transition-transform duration-500">
-                    <Image
-                      src="/assets/Elementos Gráficos/artesano:a 2.png"
-                      alt="Artesano preparando tacos"
-                      width={350}
-                      height={300}
-                      sizes="(min-width: 1024px) 350px, (min-width: 768px) 280px, 240px"
-                      className="w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
-                    />
-                  </div>
-                </FadeInImage>
-              </div>
-
-              {/* Título Central y Descripción */}
-              <div className="text-center order-1 lg:order-2 px-2">
-                <ScrollReveal delay={0.3}>
-                  <h2 className="main-title mb-6" style={{color: '#732621', whiteSpace: 'nowrap', textAlign: 'center', fontSize: 'clamp(2.5rem, 5vw, 4rem)', transform: 'translateX(-18%)'}}>
-                    CADA TACO TOCA
-                  </h2>
-                </ScrollReveal>
-
-                <ScrollReveal delay={0.5}>
-                  <div className="max-w-md mx-auto">
-                    <p className="description-text mb-6 leading-relaxed text-center" style={{color: 'rgba(115, 38, 33, 0.8)', fontSize: 'clamp(0.9rem, 2vw, 1.1rem)'}}>
-                      Taquería que combina lo mejor de la comida callejera
-                      mexicana con un toque casero y presentaciones cuidadas,
-                      trayendo un pedacito de <strong>México a Chile</strong>.
-                    </p>
-
-                    <button type="button" className="btn-outline">
-                      Nuestra Historia
-                    </button>
-                  </div>
-                </ScrollReveal>
-              </div>
-
-              {/* Salsa Picante a la Derecha */}
-              <div className="flex justify-center lg:justify-start order-3">
-                <FadeInImage delay={0.4}>
-                  <div className="relative transform rotate-12 hover:rotate-0 transition-transform duration-500">
-                    <Image
-                      src="/assets/Elementos Gráficos/salsa picante.png"
-                      alt="Salsa picante artesanal"
-                      width={350}
-                      height={400}
-                      sizes="(min-width: 1024px) 350px, (min-width: 768px) 280px, 240px"
-                      className="w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
-                    />
-                  </div>
-                </FadeInImage>
-              </div>
             </div>
           </div>
         </div>
@@ -654,7 +653,7 @@ export default function Home() {
                 <div className="space-y-12">
                   <div>
                     <h3 className="contact-label">DIRECCIÓN</h3>
-                    <p className="contact-info">Avenida los carrera 1765, Strip center IPA</p>
+                    <p className="contact-info">Quilpué, Valparaíso, Chile</p>
                   </div>
                   
                   <div>

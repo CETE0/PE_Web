@@ -32,9 +32,6 @@ export default function Header() {
     >
       <div className="container-header h-full flex items-center justify-center px-8">
         <nav className="flex items-center gap-12">
-          <a href="#inicio" className="nav-link-light">
-            Home
-          </a>
           <a href="#cada-taco-toca" className="nav-link-light">
             Menu
           </a>
