@@ -140,7 +140,7 @@ export default function HeaderResponsive() {
           <a
             href="#cada-taco-toca"
             onClick={handleLinkClick}
-            className="text-2xl font-bold tracking-wide"
+            className="nav-link"
             style={{ color: '#732621' }}
           >
             NOSOTROS
@@ -148,7 +148,7 @@ export default function HeaderResponsive() {
           <a
             href="#menu"
             onClick={handleLinkClick}
-            className="text-2xl font-bold tracking-wide"
+            className="nav-link"
             style={{ color: '#732621' }}
           >
             MENÚ
@@ -156,7 +156,7 @@ export default function HeaderResponsive() {
           <a
             href="#reservas"
             onClick={handleLinkClick}
-            className="text-2xl font-bold tracking-wide"
+            className="nav-link"
             style={{ color: '#732621' }}
           >
             RESERVAS
@@ -164,7 +164,7 @@ export default function HeaderResponsive() {
           <a
             href="#ubicacion"
             onClick={handleLinkClick}
-            className="text-2xl font-bold tracking-wide"
+            className="nav-link"
             style={{ color: '#732621' }}
           >
             CONTACTO
@@ -172,11 +172,11 @@ export default function HeaderResponsive() {
 
           {/* Información adicional */}
           <div className="mt-6 text-center">
-            <p className="text-sm" style={{ color: 'rgba(115, 38, 33, 0.7)' }}>
+            <p className="contact-info" style={{ color: 'rgba(115, 38, 33, 0.7)' }}>
               Martes - Domingo<br />
               13:00 - 22:30 hrs
             </p>
-            <p className="text-sm mt-2" style={{ color: 'rgba(115, 38, 33, 0.7)' }}>
+            <p className="contact-info mt-2" style={{ color: 'rgba(115, 38, 33, 0.7)' }}>
               +56 9 5539 2622
             </p>
           </div>

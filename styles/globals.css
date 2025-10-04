@@ -1,4 +1,15 @@
-@import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Aplicar fuente Kade a todos los elementos por defecto */
+* {
+  font-family: 'Kade', sans-serif;
+}
+
+body {
+  font-family: 'Kade', sans-serif;
+}
 
 /* Importación de fuente Kade personalizada */
 @font-face {
@@ -46,6 +57,7 @@
 :root {
   --background: #FBFFEE;
   --foreground: #732621;
+  font-family: 'Kade', sans-serif;
   
   /* Texturas artesanales */
   --paper-texture: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23732621' fill-opacity='0.015'%3E%3Ccircle cx='4' cy='4' r='1'/%3E%3Ccircle cx='44' cy='44' r='1'/%3E%3Ccircle cx='12' cy='36' r='1'/%3E%3Ccircle cx='52' cy='8' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -73,7 +85,6 @@
   --font-kade-bold: 'Kade', sans-serif;
   --font-kade-medium: 'Kade', sans-serif;
   --font-kade-regular: 'Kade', sans-serif;
-  --font-family-base: 'Kade', sans-serif;
   
   /* Espaciado artesanal - generoso y rítmico */
   --spacing-section: 6rem;
@@ -646,6 +657,14 @@ input, textarea, select, button {
   @apply block text-xs mb-3 uppercase tracking-widest;
   color: var(--color-pe-text-dark);
   letter-spacing: 0.15em;
+}
+
+/* Texto auxiliar en formularios - Kade Regular */
+.form-helper-text {
+  font-family: var(--font-kade-regular);
+  font-weight: 400;
+  @apply text-sm;
+  color: var(--color-pe-text-muted);
 }
 
 .form-field-bold {

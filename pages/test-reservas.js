@@ -28,6 +28,15 @@ export default function TestReservas() {
     email: '' // Email vacío para probar funcionamiento sin email
   };
 
+  const testDataEmptyEmail = {
+    nombre: 'Carlos López',
+    telefono: '+56987654323',
+    fecha: '2024-12-27',
+    hora: '18:30',
+    personas: '3',
+    email: null // Email null para probar funcionamiento con email explícitamente null
+  };
+
   const testAPI = async (apiEndpoint = endpoint, useTestData = true) => {
     setLoading(true);
     setResult(null);
@@ -353,21 +362,21 @@ export default function TestReservas() {
 
         <h3 style={{ marginTop: '1rem' }}>🔧 Solución al Error:</h3>
 
-        <h4>Si ves "Método no permitido. Use POST.":</h4>
+        <h4>Si ves &quot;Método no permitido. Use POST.&quot;:</h4>
         <ul>
           <li>❌ <strong>Estás accediendo directamente</strong> a `/api/reservas` desde el navegador</li>
           <li>✅ <strong>Solución</strong>: Usa el formulario de la página principal</li>
           <li>🔍 <strong>Diagnóstico</strong>: Ve a `/diagnostico-http` para probar métodos HTTP</li>
         </ul>
 
-        <h4>Si ves "text/html; charset=utf-8":</h4>
+        <h4>Si ves &quot;text/html; charset=utf-8&quot;:</h4>
         <ul>
           <li>✅ <strong>API Básica funciona</strong> → Problema no está en Next.js</li>
           <li>✅ <strong>Reservas Simple funciona</strong> → Problema no está en el endpoint</li>
           <li>❌ <strong>Reservas Completa falla</strong> → Problema está en la importación del módulo resOS</li>
         </ul>
 
-        <h4>Si ves "no suitable table found":</h4>
+        <h4>Si ves &quot;no suitable table found&quot;:</h4>
         <ul>
           <li>✅ <strong>Los datos están correctos</strong> → Formato válido para resOS</li>
           <li>⚠️ <strong>Falta configuración</strong> → Configura mesas en resOS</li>

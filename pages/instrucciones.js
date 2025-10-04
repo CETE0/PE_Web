@@ -11,13 +11,13 @@ export default function Instrucciones() {
       </h1>
 
       <div style={{ marginBottom: '2rem', padding: '1.5rem', backgroundColor: '#fff3cd', border: '1px solid #ffeaa7', borderRadius: '8px' }}>
-        <h2 style={{ color: '#856404', marginTop: 0 }}>🚨 ERROR COMÚN: "Método no permitido. Use POST."</h2>
+        <h2 style={{ color: '#856404', marginTop: 0 }}>🚨 ERROR COMÚN: &quot;Método no permitido. Use POST.&quot;</h2>
         <p style={{ marginBottom: '1rem' }}>
           <strong>¿Ves este error?</strong> Significa que estás intentando acceder al endpoint de la API directamente desde el navegador.
         </p>
         <div style={{ backgroundColor: '#f8f9fa', padding: '1rem', borderRadius: '4px', marginBottom: '1rem' }}>
           <code style={{ color: '#721c24' }}>
-            {"{"}"success":false,"message":"Método no permitido. Use POST."{"}"}
+            {`{"success":false,"message":"Método no permitido. Use POST."}`}
           </code>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function Instrucciones() {
 
         <div style={{ marginBottom: '1.5rem' }}>
           <h3>3. Envía la reserva</h3>
-          <p>Haz clic en el botón "RESERVAR AHORA". El formulario enviará automáticamente una petición POST.</p>
+          <p>Haz clic en el botón &quot;RESERVAR AHORA&quot;. El formulario enviará automáticamente una petición POST.</p>
           <div style={{ backgroundColor: '#d4edda', padding: '0.5rem', borderRadius: '4px' }}>
             ✅ El formulario maneja automáticamente el método HTTP correcto
           </div>
@@ -75,7 +75,7 @@ export default function Instrucciones() {
           <div style={{ backgroundColor: '#e8f4fd', padding: '0.5rem', borderRadius: '4px', marginBottom: '0.5rem' }}>
             <strong>URL:</strong> <code>http://localhost:3000/test-reservas</code>
           </div>
-          <p>Haz clic en "Reservas Completa" para probar el sistema completo.</p>
+          <p>Haz clic en &quot;Reservas Completa&quot; para probar el sistema completo.</p>
         </div>
 
         <div style={{ marginBottom: '1.5rem' }}>
@@ -101,7 +101,7 @@ export default function Instrucciones() {
         <h2 style={{ color: '#732621' }}>⚙️ CONFIGURACIÓN NECESARIA EN RESOS</h2>
 
         <p style={{ marginBottom: '1rem' }}>
-          Si ves el error <strong>"no suitable table found"</strong>, significa que falta configurar tu cuenta de resOS:
+          Si ves el error <strong>&quot;no suitable table found&quot;</strong>, significa que falta configurar tu cuenta de resOS:
         </p>
 
         <div style={{ backgroundColor: '#f8f9fa', padding: '1rem', borderRadius: '4px', marginBottom: '1rem' }}>
@@ -111,7 +111,7 @@ export default function Instrucciones() {
             <li>Ve a <strong>Settings → Tables</strong></li>
             <li>Agrega al menos una mesa con:
               <ul>
-                <li>Nombre: "Mesa 1"</li>
+                <li>Nombre: &quot;Mesa 1&quot;</li>
                 <li>Capacidad mínima: 1</li>
                 <li>Capacidad máxima: 12</li>
               </ul>
@@ -127,7 +127,7 @@ export default function Instrucciones() {
         <div style={{ backgroundColor: '#f8f9fa', padding: '1rem', borderRadius: '4px' }}>
           <pre style={{ margin: 0, overflow: 'auto' }}>
 {`# Ver procesos de Next.js
-ps aux | grep "next dev"
+ps aux | grep &quot;next dev&quot;
 
 # Ver logs del servidor
 tail -f ~/.npm/_logs/*.log
@@ -144,7 +144,7 @@ npm run dev`}
           Cuando todo funciona correctamente, deberías ver:
         </p>
         <div style={{ backgroundColor: '#f8f9fa', padding: '1rem', borderRadius: '4px' }}>
-          <strong>✅ Mensaje de éxito:</strong> "¡Reserva creada exitosamente! Te contactaremos pronto para confirmar."
+          <strong>✅ Mensaje de éxito:</strong> &quot;¡Reserva creada exitosamente! Te contactaremos pronto para confirmar.&quot;
         </div>
       </section>
 

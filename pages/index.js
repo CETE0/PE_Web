@@ -517,7 +517,7 @@ export default function Home() {
                       {/* Segunda fila: Email (opcional pero recomendado) */}
                       <div>
                         <label className="form-label-bold">
-                          EMAIL <span className="text-gray-500 text-sm font-normal">(opcional pero recomendado)</span>
+                          EMAIL <span className="form-helper-text">(opcional pero recomendado)</span>
                         </label>
                         <input
                           type="email"
