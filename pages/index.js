@@ -297,7 +297,7 @@ export default function Home() {
       </section>
 
       {/* Menú - Diseño Bold y Minimalista */}
-      <section id="menu" className="section relative py-4 lg:py-6 overflow-visible" style={{
+      <section id="menu" className="section-no-gap relative py-4 lg:py-6 overflow-visible" style={{
         backgroundColor: '#FBFFEE',
         paddingTop: 'var(--menu-padding-y-mobile)',
         paddingBottom: 'var(--menu-padding-y-mobile)'
@@ -363,7 +363,7 @@ export default function Home() {
       </section>
 
       {/* Sección "Cada Taco Toca" - Estilo Primera Imagen */}
-      <section id="cada-taco-toca" className="relative py-1 lg:py-2 overflow-hidden" style={{
+      <section id="cada-taco-toca" className="section-no-gap relative py-1 lg:py-2 overflow-hidden" style={{
         backgroundColor: '#FBFFEE',
         paddingTop: 'var(--cada-taco-toca-padding-x-top)',
         paddingBottom: 'var(--cada-taco-toca-padding-x-bottom)',
@@ -375,9 +375,9 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center w-full max-w-6xl mx-auto">
 
               {/* Artesano a la Izquierda */}
-              <div className="flex justify-center lg:justify-end order-2 lg:order-1">
+              <div className="flex justify-center lg:justify-end order-2 lg:order-1 mt-8 lg:mt-0">
                 <FadeInImage delay={0.2}>
-                  <div className="relative transform -rotate-12 hover:rotate-0 transition-transform duration-500">
+                  <div className="relative transform -rotate-12 hover:rotate-0 transition-transform duration-500" style={{marginTop: '2rem'}}>
                     <Image
                       src="/assets/Elementos Gráficos/artesano:a 2.png"
                       alt="Artesano preparando tacos"
@@ -678,7 +678,7 @@ export default function Home() {
               <ScrollReveal delay={0.5}>
                 <div className="aspect-[4/3] w-full overflow-hidden rounded-none border-4" style={{borderColor: '#732621'}}>
                   <iframe
-                    title="Mapa Quilpué"
+                    title="Ubicación - Avenida los carrera 1765, Strip center IPA"
                     width="600"
                     height="450"
                     style={{ border: 0, width: "100%", height: "100%" }}

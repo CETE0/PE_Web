@@ -286,11 +286,25 @@ input, textarea, select, button {
   @apply w-full;
   padding-top: var(--spacing-section-mobile);
   padding-bottom: var(--spacing-section-mobile);
-  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
   .section {
+    padding-top: var(--spacing-section);
+    padding-bottom: var(--spacing-section);
+  }
+}
+
+/* Secciones sin margen inferior para eliminar gaps */
+.section-no-gap {
+  @apply w-full;
+  padding-top: var(--spacing-section-mobile);
+  padding-bottom: var(--spacing-section-mobile);
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .section-no-gap {
     padding-top: var(--spacing-section);
     padding-bottom: var(--spacing-section);
   }

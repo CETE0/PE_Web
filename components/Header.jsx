@@ -36,7 +36,7 @@ export default function Header() {
             Menu
           </a>
           <a href="#reservas" className="nav-link-light text-sm lg:text-base uppercase tracking-wide hover:opacity-80 transition-opacity">
-            Reservaciones
+            Reservas
           </a>
           <a href="#ubicacion" className="nav-link-light text-sm lg:text-base uppercase tracking-wide hover:opacity-80 transition-opacity">
             Contacto
