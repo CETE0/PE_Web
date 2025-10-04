@@ -33,12 +33,12 @@
   #inicio > .container > div:first-child {
     position: absolute !important;
     top: 3rem !important; /* Bajado 2rem adicionales */
-    left: 65% !important;
+    left: 55% !important;
     transform: translateX(-50%) !important;
     width: 100% !important;
     text-align: center !important;
     z-index: 10 !important;
-    scale: 1.3 !important;
+    scale: 1.1 !important;
   }
   
   /* Logo imagen - tamaño apropiado */
@@ -53,8 +53,8 @@
   /* Tagline - Bajado 2rem adicionales */
   #inicio > .container > div:last-child {
     position: absolute !important;
-    top: 24rem !important; /* Bajado 2rem adicionales */
-    left: 35% !important; /* Centrado como el logo */
+    top: 9rem !important; /* Bajado 2rem adicionales */
+    left: 35.8% !important; /* Centrado como el logo */
     transform: translateX(-50%) !important; /* Alineación vertical con el logo */
     width: 60% !important; /* Ancho controlado */
     text-align: center !important; /* Centrado como el logo */
@@ -69,13 +69,13 @@
   /* Imagen del taco - Bajada 2rem adicionales */
   #inicio > .container > div:nth-child(2) {
     position: absolute !important;
-    top: 8.5rem !important; /* Bajado 2rem adicionales */
-    right: 2rem !important;
+    top: 13rem !important; /* Bajado 2rem adicionales */
+    right: 6rem !important;
     transform: scale(1) !important; /* Más grande */
     opacity: 1 !important; /* Más visible */
     z-index: 2 !important;
     pointer-events: none !important;
-    scale: 2.5 !important;
+    scale: 2.3 !important;
   }
   
   /* Imagen del taco con tamaño más grande */

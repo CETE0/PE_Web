@@ -2,6 +2,18 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Animación simplificada usando clases de Tailwind */
+.animate-bounce {
+  /* Tailwind ya incluye animate-bounce, pero podemos personalizarlo para móvil */
+}
+
+/* Solo aplicar en móvil - deshabilitar en desktop */
+@media (min-width: 768px) {
+  .animate-bounce {
+    animation: none;
+  }
+}
+
 /* Aplicar fuente Kade a todos los elementos por defecto */
 * {
   font-family: 'Kade', sans-serif;

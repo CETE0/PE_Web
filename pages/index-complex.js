@@ -266,7 +266,7 @@ export default function Home() {
           {/* Taco Gigante - Posición Centro-Derecha Bajada Más Proporcionalmente */}
           <div className="absolute top-3/5 right-0 transform -translate-y-1/2 translate-x-2/6 rotate-365">
             <FadeInImage delay={0.4}>
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden animate-bounce">
                 <Image
                   src="/assets/Elementos Gráficos/taco 2.png"
                   alt="Taco artesanal"

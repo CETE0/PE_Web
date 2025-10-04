@@ -267,7 +267,7 @@ export default function Home() {
           {/* Taco Gigante - Posición Centro-Derecha Bajada Más Proporcionalmente */}
           <div className="absolute top-3/5 right-0 transform -translate-y-1/2 translate-x-2/6 rotate-365">
             <FadeInImage delay={0.4}>
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden animate-bounce">
                 <Image
                   src="/assets/Elementos Gráficos/taco 2.png"
                   alt="Taco artesanal"
@@ -286,8 +286,9 @@ export default function Home() {
           <div className="absolute bottom-8 right-0 lg:bottom-7 lg:right-0">
             <ScrollReveal delay={0.6}>
               <div className="text-left">
-                <p className="tagline-small leading-tight whitespace-nowrap" style={{color: '#732621'}}>
-                  LA CALLE SE HIZO MESA, LA COSTA SE HIZO TACO.
+                <p className="tagline-small leading-tight" style={{color: '#732621'}}>
+                  LA CALLE SE HIZO MESA,<br />
+                  LA COSTA SE HIZO TACO.
                 </p>
               </div>
             </ScrollReveal>
