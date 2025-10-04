@@ -32,7 +32,7 @@
   /* Logo "Puerto Escondido" - Bajado 2rem adicionales */
   #inicio > .container > div:first-child {
     position: absolute !important;
-    top: 5.5rem !important; /* Bajado 2rem adicionales */
+    top: 3rem !important; /* Bajado 2rem adicionales */
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 100% !important;

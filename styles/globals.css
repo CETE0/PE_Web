@@ -9,6 +9,23 @@
 
 body {
   font-family: 'Kade', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mejorar accesibilidad y contraste */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-pe-accent);
+  outline-offset: 2px;
+}
+
+/* Mejorar contraste en elementos interactivos */
+.nav-link:hover {
+  opacity: 0.8;
 }
 
 /* Importación de fuente Kade personalizada */
@@ -269,6 +286,7 @@ input, textarea, select, button {
   @apply w-full;
   padding-top: var(--spacing-section-mobile);
   padding-bottom: var(--spacing-section-mobile);
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -410,13 +428,27 @@ input, textarea, select, button {
 /* Título principal estilo primera imagen - Kade Bold */
 .main-title {
   font-family: var(--font-kade-bold);
-  font-weight: 800;
-  @apply text-4xl md:text-6xl lg:text-7xl;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  font-weight: 900;
+  @apply text-4xl md:text-6xl lg:text-7xl xl:text-8xl;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.main-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-pe-accent);
+  border-radius: 2px;
 }
 
 /* Tagline grande - Solo Kade */
@@ -485,6 +517,26 @@ input, textarea, select, button {
   background-color: var(--color-pe-text-dark);
   color: var(--color-pe-bg);
   transform: translateY(-2px);
+}
+
+/* Botón outline mejorado - Exactamente como en la imagen */
+.btn-outline-enhanced {
+  font-family: var(--font-kade-medium);
+  font-weight: 500;
+  @apply inline-flex items-center justify-center px-8 py-3 tracking-wide uppercase text-sm;
+  border: 2px solid #732621;
+  color: #732621;
+  background-color: transparent;
+  border-radius: 0;
+  transition: all 200ms ease-out;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-outline-enhanced:hover {
+  background-color: #732621;
+  color: #FBFFEE;
+  transform: translateY(-1px);
 }
 
 /* ===============================================
@@ -562,6 +614,27 @@ input, textarea, select, button {
   transform: translateY(-1px);
 }
 
+/* Botón de contacto mejorado - Consistente con el estilo rectangular */
+.btn-contact-light-enhanced {
+  font-family: var(--font-kade-medium);
+  font-weight: 500;
+  @apply inline-flex items-center justify-center px-6 py-2 tracking-normal;
+  border: 2px solid #FBFFEE;
+  color: #FBFFEE;
+  border-radius: 0;
+  background-color: transparent;
+  transition: all 200ms ease-out;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  font-size: 0.875rem;
+}
+
+.btn-contact-light-enhanced:hover {
+  background-color: #FBFFEE;
+  color: #732621;
+  transform: translateY(-1px);
+}
+
 /* 🎪🎪 HEADER CON EFECTO DE TOLDO */
 /* Navegación para header con toldo - Kade Medium */
 .nav-link-toldo {
@@ -631,23 +704,25 @@ input, textarea, select, button {
   line-height: 1.5;
 }
 
-/* Botón CTA de menú - Solo Kade */
+/* Botón CTA de menú - Exactamente como en la imagen */
 .btn-menu-cta {
   font-family: var(--font-kade-medium);
-  font-weight: 600;
-  @apply inline-flex items-center justify-center px-10 py-4 tracking-wide uppercase text-sm;
+  font-weight: 500;
+  @apply inline-flex items-center justify-center px-8 py-3 tracking-wide uppercase text-sm;
   background-color: transparent;
-  border: 2px solid var(--color-pe-text-dark);
-  color: var(--color-pe-text-dark);
+  border: 2px solid #732621;
+  color: #732621;
   border-radius: 0;
-  transition: all 300ms ease-out;
+  transition: all 200ms ease-out;
   letter-spacing: 0.1em;
+  text-decoration: none;
+  min-width: 200px;
 }
 
 .btn-menu-cta:hover {
-  background-color: var(--color-pe-text-dark);
-  color: var(--color-pe-bg);
-  transform: translateY(-3px);
+  background-color: #732621;
+  color: #FBFFEE;
+  transform: translateY(-1px);
 }
 
 /* Formularios bold - Kade Medium */

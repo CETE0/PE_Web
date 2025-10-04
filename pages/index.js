@@ -393,7 +393,7 @@ export default function Home() {
               {/* Título Central y Descripción */}
               <div className="text-center order-1 lg:order-2 px-2">
                 <ScrollReveal delay={0.3}>
-                  <h2 className="main-title mb-6" style={{color: '#732621', whiteSpace: 'nowrap', textAlign: 'center', fontSize: 'clamp(2.5rem, 5vw, 4rem)', transform: 'translateX(-18%)'}}>
+                  <h2 className="main-title mb-8" style={{color: '#732621'}}>
                     CADA TACO TOCA
                   </h2>
                 </ScrollReveal>
@@ -406,9 +406,9 @@ export default function Home() {
                       trayendo un pedacito de <strong>México a Chile</strong>.
                     </p>
 
-                    <button type="button" className="btn-outline">
+                    <a href="#menu" className="btn-outline-enhanced">
                       Nuestra Historia
-                    </button>
+                    </a>
                   </div>
                 </ScrollReveal>
               </div>
@@ -461,7 +461,7 @@ export default function Home() {
                     }`}>
                       {submitMessage}
                       {submitStatus === 'error' && (
-                        <div className="mt-2 text-sm">
+                        <div className="mt-2 text-sm" style={{color: '#732621'}}>
                           <a href="/instrucciones" target="_blank" className="underline hover:no-underline">
                             📋 Ver instrucciones de uso
                           </a>
@@ -517,7 +517,7 @@ export default function Home() {
                       {/* Segunda fila: Email (opcional pero recomendado) */}
                       <div>
                         <label className="form-label-bold">
-                          EMAIL <span className="form-helper-text">(opcional pero recomendado)</span>
+                          EMAIL <span className="form-helper-text"></span>
                         </label>
                         <input
                           type="email"
@@ -530,8 +530,8 @@ export default function Home() {
                         {errors.email && (
                           <p className="text-red-600 text-sm mt-1">{errors.email}</p>
                         )}
-                        <p className="text-gray-600 text-xs mt-1">
-                          📧 Te enviaremos confirmación y recordatorios por email
+                        <p className="text-gray-600 text-xs mt-1" style={{color: '#732621'}}>
+                          Te enviaremos la confirmación de tu fecha y hora por email
                         </p>
                       </div>
                     </div>

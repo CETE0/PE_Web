@@ -455,7 +455,7 @@ export default function Home() {
                     }`}>
                       {submitMessage}
                       {submitStatus === 'error' && (
-                        <div className="mt-2 text-sm">
+                        <div className="mt-2 text-sm" style={{color: '#732621'}}>
                           <a href="/instrucciones" target="_blank" className="underline hover:no-underline">
                             📋 Ver instrucciones de uso
                           </a>
@@ -511,7 +511,7 @@ export default function Home() {
                       {/* Segunda fila: Email (opcional pero recomendado) */}
                       <div>
                         <label className="form-label-bold">
-                          EMAIL <span className="text-gray-500 text-sm font-normal">(opcional pero recomendado)</span>
+                          EMAIL <span className="text-gray-500 text-sm font-normal" style={{color: '#732621'}}>(opcional pero recomendado)</span>
                         </label>
                         <input
                           type="email"
@@ -524,7 +524,7 @@ export default function Home() {
                         {errors.email && (
                           <p className="text-red-600 text-sm mt-1">{errors.email}</p>
                         )}
-                        <p className="text-gray-600 text-xs mt-1">
+                        <p className="text-gray-600 text-xs mt-1" style={{color: '#732621'}}>
                           📧 Te enviaremos confirmación y recordatorios por email
                         </p>
                       </div>

@@ -31,14 +31,14 @@ export default function Header() {
       }}
     >
       <div className="container-header h-full flex items-center justify-center px-8">
-        <nav className="flex items-center gap-12">
-          <a href="#cada-taco-toca" className="nav-link-light">
+        <nav className="flex items-center gap-12 lg:gap-16">
+          <a href="#cada-taco-toca" className="nav-link-light text-sm lg:text-base uppercase tracking-wide hover:opacity-80 transition-opacity">
             Menu
           </a>
-          <a href="#reservas" className="nav-link-light">
+          <a href="#reservas" className="nav-link-light text-sm lg:text-base uppercase tracking-wide hover:opacity-80 transition-opacity">
             Reservaciones
           </a>
-          <a href="#ubicacion" className="btn-contact-light">
+          <a href="#ubicacion" className="nav-link-light text-sm lg:text-base uppercase tracking-wide hover:opacity-80 transition-opacity">
             Contacto
           </a>
         </nav>
