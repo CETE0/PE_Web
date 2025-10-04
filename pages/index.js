@@ -462,9 +462,7 @@ export default function Home() {
                       {submitMessage}
                       {submitStatus === 'error' && (
                         <div className="mt-2 text-sm" style={{color: '#732621'}}>
-                          <a href="/instrucciones" target="_blank" className="underline hover:no-underline">
-                            📋 Ver instrucciones de uso
-                          </a>
+                          ⚠️ Inténtelo de nuevo más tarde
                         </div>
                       )}
                     </div>
