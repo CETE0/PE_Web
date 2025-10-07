@@ -354,7 +354,7 @@ export default function EjemploResponsive() {
                   
                   <div>
                     <h3 className="contact-label">HORARIOS</h3>
-                    <p className="contact-info">Martes - Domingo<br />13:00 - 22:30 hrs</p>
+                    <p className="contact-info">Miércoles - Domingo<br />13:00 - 21:00 hrs<br /><br />Viernes y Sábado<br />13:00 - 22:00 hrs</p>
                   </div>
                   
                   <div>

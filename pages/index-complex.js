@@ -266,14 +266,14 @@ export default function Home() {
           {/* Taco Gigante - Posición Centro-Derecha Bajada Más Proporcionalmente */}
           <div className="absolute top-3/5 right-0 transform -translate-y-1/2 translate-x-2/6 rotate-365">
             <FadeInImage delay={0.4}>
-              <div className="relative overflow-hidden animate-bounce">
+              <div className="relative overflow-hidden">
                 <Image
                   src="/assets/Elementos Gráficos/taco 2.png"
                   alt="Taco artesanal"
                   width={1400}
                   height={1120}
                   sizes="(min-width: 1280px) 1400px, (min-width: 1024px) 1200px, (min-width: 768px) 1000px, 800px"
-                  className="w-[800px] md:w-[1000px] lg:w-[1200px] xl:w-[1400px] h-auto"
+                  className="w-[800px] md:w-[1000px] lg:w-[1200px] xl:w-[1400px] h-auto animate-float-taco"
                   priority
                   style={{ maxWidth: '100%', height: 'auto' }}
                 />
@@ -651,7 +651,7 @@ export default function Home() {
                   
                   <div>
                     <h3 className="contact-label">HORARIOS</h3>
-                    <p className="contact-info">Martes - Domingo<br />13:00 - 22:30 hrs</p>
+                    <p className="contact-info">Miércoles - Domingo<br />13:00 - 21:00 hrs<br /><br />Viernes y Sábado<br />13:00 - 22:00 hrs</p>
                   </div>
                   
                   <div>

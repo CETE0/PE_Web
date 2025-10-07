@@ -32,7 +32,7 @@ export default function Header() {
     >
       <div className="container-header h-full flex items-center justify-center px-8">
         <nav className="flex items-center gap-12 lg:gap-16">
-          <a href="#cada-taco-toca" className="nav-link-light text-sm lg:text-base uppercase tracking-wide hover:opacity-80 transition-opacity">
+          <a href="https://toteat.shop/r/cl/Puerto-Escondido-tacos/21637/checkin/menu" target="_blank" rel="noopener noreferrer" className="nav-link-light text-sm lg:text-base uppercase tracking-wide hover:opacity-80 transition-opacity">
             Menu
           </a>
           <a href="#reservas" className="nav-link-light text-sm lg:text-base uppercase tracking-wide hover:opacity-80 transition-opacity">

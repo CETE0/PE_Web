@@ -40,8 +40,11 @@ export default function Footer() {
               <div>
                 <h3 className="footer-label text-xs">HORARIOS</h3>
                 <p className="footer-info text-sm">
-                  Martes - Domingo<br />
-                  13:00 - 22:30 hrs
+                  Miércoles - Domingo<br />
+                  13:00 - 21:00 hrs<br />
+                  <br />
+                  Viernes y Sábado<br />
+                  13:00 - 22:00 hrs
                 </p>
               </div>
               

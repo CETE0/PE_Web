@@ -64,7 +64,7 @@ export default function HeaderResponsive() {
               <a href="#cada-taco-toca" className="nav-link-light">
                 Nosotros
               </a>
-              <a href="#menu" className="nav-link-light">
+              <a href="https://toteat.shop/r/cl/Puerto-Escondido-tacos/21637/checkin/menu" target="_blank" rel="noopener noreferrer" className="nav-link-light">
                 Menú
               </a>
               <a href="#reservas" className="nav-link-light">
@@ -146,7 +146,9 @@ export default function HeaderResponsive() {
             NOSOTROS
           </a>
           <a
-            href="#menu"
+            href="https://toteat.shop/r/cl/Puerto-Escondido-tacos/21637/checkin/menu"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={handleLinkClick}
             className="nav-link"
             style={{ color: '#732621' }}
