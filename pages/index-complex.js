@@ -267,16 +267,19 @@ export default function Home() {
           <div className="absolute top-3/5 right-0 transform -translate-y-1/2 translate-x-2/6 rotate-365">
             <FadeInImage delay={0.4}>
               <div className="relative overflow-hidden">
-                <Image
-                  src="/assets/Elementos Gráficos/taco 2.png"
-                  alt="Taco artesanal"
-                  width={1400}
-                  height={1120}
-                  sizes="(min-width: 1280px) 1400px, (min-width: 1024px) 1200px, (min-width: 768px) 1000px, 800px"
-                  className="w-[800px] md:w-[1000px] lg:w-[1200px] xl:w-[1400px] h-auto animate-float-taco"
-                  priority
-                  style={{ maxWidth: '100%', height: 'auto' }}
-                />
+                <div className="relative hero-taco-lines">
+                  <Image
+                    src="/assets/Elementos Gráficos/taco 2.png"
+                    alt="Taco artesanal"
+                    width={1400}
+                    height={1120}
+                    sizes="(min-width: 1280px) 1400px, (min-width: 1024px) 1200px, (min-width: 768px) 1000px, 800px"
+                    className="w-[800px] md:w-[1000px] lg:w-[1200px] xl:w-[1400px] h-auto relative z-5"
+                    /* ANIMACIÓN COMENTADA: animate-float-taco */
+                    priority
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                </div>
               </div>
             </FadeInImage>
           </div>
@@ -296,7 +299,7 @@ export default function Home() {
       </section>
 
       {/* Sección "Cada Taco Toca" - Estilo Primera Imagen */}
-      <section id="cada-taco-toca" className="section-no-gap relative py-1 lg:py-2 overflow-hidden" style={{
+      <section id="cada-taco-toca" className="cada-taco-toca section-no-gap relative py-1 lg:py-2 overflow-hidden" style={{
         backgroundColor: '#FBFFEE',
         paddingTop: 'var(--cada-taco-toca-padding-x-top)',
         paddingBottom: 'var(--cada-taco-toca-padding-x-bottom)',
@@ -309,8 +312,8 @@ export default function Home() {
               
               {/* Artesano a la Izquierda */}
               <div className="flex justify-center lg:justify-end order-2 lg:order-1 mt-8 lg:mt-0">
-                <FadeInImage delay={0.2}>
-                  <div className="relative transform -rotate-12 hover:rotate-0 transition-transform duration-500" style={{marginTop: '2rem'}}>
+                <FadeInImage delay={0.2} disableTransform={true}>
+                  <div className="relative transform hover:rotate-0 transition-transform duration-500" style={{marginTop: '5rem'}}>
                     <Image
                       src="/assets/Elementos Gráficos/artesano:a 2.png"
                       alt="Artesano preparando tacos"
@@ -318,6 +321,10 @@ export default function Home() {
                       height={300}
                       sizes="(min-width: 1024px) 350px, (min-width: 768px) 280px, 240px"
                       className="w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
+                      style={{
+                        transform: 'rotate(-15deg)',
+                        transition: 'transform 0.5s ease'
+                      }}
                     />
                   </div>
                 </FadeInImage>
@@ -348,8 +355,8 @@ export default function Home() {
 
               {/* Salsa Picante a la Derecha */}
               <div className="flex justify-center lg:justify-start order-3">
-                <FadeInImage delay={0.4}>
-                  <div className="relative transform rotate-12 hover:rotate-0 transition-transform duration-500">
+                <FadeInImage delay={0.4} disableTransform={true}>
+                  <div className="relative transform hover:rotate-0 transition-transform duration-500" style={{marginTop: '4rem'}}>
                     <Image
                       src="/assets/Elementos Gráficos/salsa picante.png"
                       alt="Salsa picante artesanal"
@@ -357,6 +364,10 @@ export default function Home() {
                       height={400}
                       sizes="(min-width: 1024px) 350px, (min-width: 768px) 280px, 240px"
                       className="w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
+                      style={{
+                        transform: 'rotate(15deg)',
+                        transition: 'transform 0.5s ease'
+                      }}
                     />
                   </div>
                 </FadeInImage>

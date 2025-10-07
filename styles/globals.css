@@ -985,7 +985,11 @@ input, textarea, select, button {
   }
 }
 
-/* Animación suave arriba-abajo para el taco */
+/* ===============================================
+   ANIMACIÓN DEL TACO - COMENTADA TEMPORALMENTE
+   ===============================================
+   Para reactivar, descomentar todo este bloque y las clases animate-float-taco en los archivos correspondientes
+
 @keyframes floatUpDown {
   0%, 100% {
     transform: translateY(0px);
@@ -995,37 +999,101 @@ input, textarea, select, button {
   }
 }
 
-/* Animación específica para el taco con mayor especificidad */
 .animate-float-taco {
-  animation: floatUpDown 3s ease-in-out infinite;
+  animation: floatUpDown 6s ease-in-out infinite;
 }
 
-/* Asegurar que la animación funcione en móviles */
 @media (max-width: 767px) {
   .animate-float-taco {
-    animation: floatUpDown 3s ease-in-out infinite !important;
+    animation: floatUpDown 6s ease-in-out infinite !important;
     transform-origin: center center;
-    /* Optimizaciones de rendimiento para móviles */
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
   }
 }
 
-/* Asegurar que la animación no sea sobreescrita por otras transformaciones */
 .animate-float-taco {
   will-change: transform;
   backface-visibility: hidden;
   perspective: 1000px;
-  /* Forzar la aplicación de la animación incluso con conflictos */
   animation-fill-mode: both;
 }
 
-/* Regla de emergencia para asegurar visibilidad en móviles */
 @media (max-width: 767px) {
   .animate-float-taco {
-    animation-duration: 3s !important;
+    animation-duration: 6s !important;
     animation-timing-function: ease-in-out !important;
     animation-iteration-count: infinite !important;
     animation-name: floatUpDown !important;
+  }
+}
+*/
+
+/* ===============================================
+   REGLAS PARA ASEGURAR ROTACIONES PERSONALIZADAS
+   =============================================== */
+
+/* Asegurar que las rotaciones personalizadas no sean sobreescritas */
+img[style*="rotate("] {
+  transform: attr(style) !important;
+}
+
+/* Reglas específicas para imágenes rotadas en la sección Cada Taco Toca */
+.cada-taco-toca img[style*="rotate(-15deg)"] {
+  transform: rotate(-15deg) !important;
+}
+
+.cada-taco-toca img[style*="rotate(15deg)"] {
+  transform: rotate(15deg) !important;
+}
+
+/* ===============================================
+   LÍNEAS ROJAS DECORATIVAS PARA EL TACO DEL HERO
+   =============================================== */
+
+/* Líneas rojas en los extremos del taco del hero */
+.hero-taco-lines::before,
+.hero-taco-lines::after {
+  content: '';
+  position: absolute;
+  background-color: #C41E3A; /* Rojo característico de la marca */
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Línea roja izquierda */
+.hero-taco-lines::before {
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* Línea roja derecha */
+.hero-taco-lines::after {
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* Responsive - líneas más pequeñas en móviles */
+@media (max-width: 767px) {
+  .hero-taco-lines::before,
+  .hero-taco-lines::after {
+    width: 18px;
+    height: 3px;
+  }
+
+  .hero-taco-lines::before {
+    left: -9px;
+  }
+
+  .hero-taco-lines::after {
+    right: -9px;
   }
 }
