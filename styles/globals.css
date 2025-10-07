@@ -982,6 +982,10 @@ input, textarea, select, button {
 
     /* 🔥🔥 SECCIÓN UBICACIÓN - DESKTOP */
     --ubicacion-padding-y-mobile: var(--ubicacion-padding-y-desktop);
+
+    /* 🔥🔥 AJUSTE ESPACIADO ESPECÍFICO PARA ESCRITORIO */
+    --reservas-padding-y-desktop: 4.5rem; /* Aumentado desde 3.5rem */
+    --ubicacion-padding-y-desktop: 5rem;  /* Aumentado desde 4rem */
   }
 }
 
@@ -1030,70 +1034,66 @@ input, textarea, select, button {
 */
 
 /* ===============================================
-   REGLAS PARA ASEGURAR ROTACIONES PERSONALIZADAS
+   MEJORAS DE RESPONSIVE DESIGN
    =============================================== */
 
-/* Asegurar que las rotaciones personalizadas no sean sobreescritas */
-img[style*="rotate("] {
-  transform: attr(style) !important;
+/* Container queries para elementos más fluidos */
+.cada-taco-toca {
+  container-type: inline-size;
 }
 
-/* Reglas específicas para imágenes rotadas en la sección Cada Taco Toca */
-.cada-taco-toca img[style*="rotate(-15deg)"] {
-  transform: rotate(-15deg) !important;
-}
-
-.cada-taco-toca img[style*="rotate(15deg)"] {
-  transform: rotate(15deg) !important;
-}
-
-/* ===============================================
-   LÍNEAS ROJAS DECORATIVAS PARA EL TACO DEL HERO
-   =============================================== */
-
-/* Líneas rojas en los extremos del taco del hero */
-.hero-taco-lines::before,
-.hero-taco-lines::after {
-  content: '';
-  position: absolute;
-  background-color: #C41E3A; /* Rojo característico de la marca */
-  z-index: 10;
-  pointer-events: none;
-}
-
-/* Línea roja izquierda */
-.hero-taco-lines::before {
-  left: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 4px;
-  border-radius: 2px;
-}
-
-/* Línea roja derecha */
-.hero-taco-lines::after {
-  right: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 4px;
-  border-radius: 2px;
-}
-
-/* Responsive - líneas más pequeñas en móviles */
-@media (max-width: 767px) {
-  .hero-taco-lines::before,
-  .hero-taco-lines::after {
-    width: 18px;
-    height: 3px;
+/* Responsive mejorado para la sección Cada Taco Toca */
+@container (max-width: 430px) {
+  .cada-taco-toca .artesano-image {
+    width: 200px !important;
+    height: auto !important;
   }
 
-  .hero-taco-lines::before {
-    left: -9px;
+  .cada-taco-toca .salsa-image {
+    width: 200px !important;
+    height: auto !important;
   }
 
-  .hero-taco-lines::after {
-    right: -9px;
+  .cada-taco-toca .min-h-custom {
+    min-height: 350px !important;
   }
+}
+
+@container (min-width: 431px) and (max-width: 768px) {
+  .cada-taco-toca .artesano-image {
+    width: 250px !important;
+    height: auto !important;
+  }
+
+  .cada-taco-toca .salsa-image {
+    width: 250px !important;
+    height: auto !important;
+  }
+
+  .cada-taco-toca .min-h-custom {
+    min-height: 450px !important;
+  }
+}
+
+@container (min-width: 769px) {
+  .cada-taco-toca .artesano-image {
+    width: 320px !important;
+    height: auto !important;
+  }
+
+  .cada-taco-toca .salsa-image {
+    width: 320px !important;
+    height: auto !important;
+  }
+
+  .cada-taco-toca .min-h-custom {
+    min-height: 550px !important;
+  }
+}
+
+/* Asegurar que las imágenes mantengan proporciones en diferentes dispositivos */
+.cada-taco-toca img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
 }

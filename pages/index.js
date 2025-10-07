@@ -247,7 +247,7 @@ export default function Home() {
         <div className="container min-h-[80vh] relative">
           
           {/* Logo Alternativo Gigante - Posición Superior Bajada Más */}
-          <div className="absolute top-3/7 left-0 transform -translate-y-1/2">
+          <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
             <ScrollReveal delay={0.2}>
               <div className="relative overflow-hidden">
                 <Image
@@ -265,7 +265,7 @@ export default function Home() {
           </div>
 
           {/* Taco Gigante - Posición Centro-Derecha Bajada Más Proporcionalmente */}
-          <div className="absolute top-3/5 right-0 transform -translate-y-1/2 translate-x-2/6 rotate-365">
+          <div className="absolute top-3/4 lg:top-1/2 right-2 lg:right-0 transform -translate-y-1/2 translate-x-2/6 lg:translate-x-1/4 rotate-365">
             <FadeInImage delay={0.4}>
               <div className="relative overflow-hidden">
                 <div className="relative hero-taco-lines">
@@ -274,8 +274,8 @@ export default function Home() {
                     alt="Taco artesanal"
                     width={1400}
                     height={1120}
-                    sizes="(min-width: 1280px) 1400px, (min-width: 1024px) 1200px, (min-width: 768px) 1000px, 800px"
-                    className="w-[800px] md:w-[1000px] lg:w-[1200px] xl:w-[1400px] h-auto relative z-5"
+                    sizes="(min-width: 1280px) 1100px, (min-width: 1024px) 900px, (min-width: 768px) 800px, 600px"
+                    className="w-[600px] md:w-[800px] lg:w-[900px] xl:w-[1100px] h-auto relative z-5"
                     /* ANIMACIÓN COMENTADA: animate-float-taco */
                     priority
                     style={{ maxWidth: '100%', height: 'auto' }}
@@ -374,7 +374,7 @@ export default function Home() {
         paddingRight: 'var(--cada-taco-toca-padding-y-mobile)'
       }}>
         <div className="container">
-          <div className="flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
+          <div className="cada-taco-toca flex items-center justify-center min-h-custom">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center w-full max-w-6xl mx-auto">
 
               {/* Artesano a la Izquierda */}
@@ -387,7 +387,7 @@ export default function Home() {
                       width={350}
                       height={300}
                       sizes="(min-width: 1024px) 350px, (min-width: 768px) 280px, 240px"
-                      className="w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
+                      className="artesano-image w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
                       style={{
                         transform: 'rotate(-15deg)',
                         transition: 'transform 0.5s ease'
@@ -398,9 +398,9 @@ export default function Home() {
               </div>
 
               {/* Título Central y Descripción */}
-              <div className="text-center order-1 lg:order-2 px-2">
+              <div className="text-center order-1 lg:order-2 px-2 w-full">
                 <ScrollReveal delay={0.3}>
-                  <h2 className="main-title mb-8" style={{color: '#732621'}}>
+                  <h2 className="main-title mb-4 mx-auto lg:ml-10" style={{color: '#732621', maxWidth: 'fit-content', marginLeft: '0', marginRight: '4rem'}}>
                     CADA TACO TOCA
                   </h2>
                 </ScrollReveal>
@@ -430,7 +430,7 @@ export default function Home() {
                       width={350}
                       height={400}
                       sizes="(min-width: 1024px) 350px, (min-width: 768px) 280px, 240px"
-                      className="w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
+                      className="salsa-image w-[240px] md:w-[280px] lg:w-[350px] h-auto drop-shadow-lg"
                       style={{
                         transform: 'rotate(15deg)',
                         transition: 'transform 0.5s ease'
@@ -650,7 +650,7 @@ export default function Home() {
       }}>
         <div className="container">
           <ScrollReveal delay={0.1}>
-            <h2 className="section-title text-center mb-24" style={{color: '#732621', marginTop: '-2rem'}}>
+            <h2 className="section-title text-center mb-24" style={{color: '#732621'}}>
               ENCUÉNTRANOS
             </h2>
           </ScrollReveal>

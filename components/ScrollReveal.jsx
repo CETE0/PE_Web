@@ -80,15 +80,15 @@ export function ParallaxElement({ children, speed = 0.5, className = '' }) {
  * FadeInImage - Animación específica para ilustraciones
  * Con efecto de "aparición orgánica"
  */
-export function FadeInImage({ children, delay = 0.2, disableTransform = false }) {
+export function FadeInImage({ children, delay = 0.2 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.4 });
 
   const variants = {
     hidden: {
       opacity: 0,
-      scale: disableTransform ? 1 : 0.9,
-      rotate: disableTransform ? 0 : -2,
+      scale: 0.9,
+      rotate: -2,
     },
     visible: {
       opacity: 1,
