@@ -40,11 +40,11 @@ textarea:focus {
   opacity: 0.8;
 }
 
-/* Importación de fuente Kade personalizada */
+/* Importación de fuente Kade personalizada - SOLO MEDIUM */
 @font-face {
   font-family: 'Kade';
-  src: url('/fonts/Kade_Regular.otf') format('opentype');
-  font-weight: 400;
+  src: url('/fonts/Kade_Medium.otf') format('opentype');
+  font-weight: 400; /* Regular */
   font-style: normal;
   font-display: swap;
 }
@@ -52,15 +52,15 @@ textarea:focus {
 @font-face {
   font-family: 'Kade';
   src: url('/fonts/Kade_Medium.otf') format('opentype');
-  font-weight: 500;
+  font-weight: 500; /* Medium */
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Kade';
-  src: url('/fonts/Kade_Bold.otf') format('opentype');
-  font-weight: 700;
+  src: url('/fonts/Kade_Medium.otf') format('opentype');
+  font-weight: 700; /* Bold */
   font-style: normal;
   font-display: swap;
 }
@@ -110,7 +110,7 @@ textarea:focus {
   --color-pe-shadow: rgba(115, 38, 33, 0.15);
   --color-pe-border: rgba(115, 38, 33, 0.2);
 
-  /* Tipografías: Kade como sistema tipográfico exclusivo */
+  /* Tipografías: Kade Medium como sistema tipográfico único */
   --font-kade-bold: 'Kade', sans-serif;
   --font-kade-medium: 'Kade', sans-serif;
   --font-kade-regular: 'Kade', sans-serif;
@@ -337,10 +337,10 @@ input, textarea, select, button {
    SISTEMA TIPOGRÁFICO KADE
    =============================================== */
 
-/* ENCABEZADOS - Kade Bold */
+/* ENCABEZADOS - Kade Medium (simulando Bold) */
 .headline {
   font-family: var(--font-kade-bold);
-  font-weight: 800;
+  font-weight: 700; /* Ajustado para sistema de solo Medium */
   @apply text-4xl md:text-6xl lg:text-7xl;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -441,20 +441,20 @@ input, textarea, select, button {
   text-transform: uppercase;
 }
 
-/* Título hero estilo referencia exacta - Kade Bold */
+/* Título hero estilo referencia exacta - Kade Medium (simulando Bold) */
 .hero-title-reference {
   font-family: var(--font-kade-bold);
-  font-weight: 900;
+  font-weight: 700; /* Ajustado para sistema de solo Medium */
   font-size: clamp(3rem, 8vw, 6rem);
   letter-spacing: -0.02em;
   line-height: 0.9;
   text-transform: uppercase;
 }
 
-/* Título principal estilo primera imagen - Kade Bold */
+/* Título principal estilo primera imagen - Kade Medium (simulando Bold) */
 .main-title {
   font-family: var(--font-kade-bold);
-  font-weight: 900;
+  font-weight: 700; /* Ajustado para sistema de solo Medium */
   @apply text-4xl md:text-6xl lg:text-7xl xl:text-8xl;
   letter-spacing: -0.03em;
   line-height: 0.9;
@@ -712,10 +712,10 @@ input, textarea, select, button {
   }
 }
 
-/* Títulos de sección - Kade Bold */
+/* Títulos de sección - Kade Medium (simulando Bold) */
 .section-title {
   font-family: var(--font-kade-bold);
-  font-weight: 800;
+  font-weight: 700; /* Ajustado para sistema de solo Medium */
   @apply text-5xl md:text-7xl lg:text-8xl;
   letter-spacing: -0.03em;
   line-height: 0.9;
@@ -943,26 +943,25 @@ input, textarea, select, button {
 }
 
 /* ===============================================
-   FUENTES KADE IMPLEMENTADAS ✓
+   FUENTES KADE IMPLEMENTADAS ✓ (SOLO MEDIUM)
    ===============================================
 
-   ✅ ESTADO: Fuentes Kade correctamente implementadas
+   ✅ ESTADO: Solo Kade Medium implementada para todo el proyecto
 
-   📁 Archivos disponibles en /public/fonts/:
-      - Kade_Regular.otf (peso 400)
-      - Kade_Medium.otf (peso 500)
-      - Kade_Bold.otf (peso 700)
+   📁 Archivo optimizado en /public/fonts/:
+      - Kade_Medium.otf (únicos peso 500 - mapeado a 400, 500, 700)
 
-   🎯 JERARQUÍA TIPOGRÁFICA:
-      - Encabezados: Kade Bold (700)
-      - Subtítulos/Navegación: Kade Medium (500)
-      - Cuerpo de texto: Kade Regular (400)
+   🎯 JERARQUÍA TIPOGRÁFICA UNIFICADA:
+      - Encabezados: Kade Medium (700 → renderizado como 500)
+      - Subtítulos/Navegación: Kade Medium (500 → renderizado como 500)
+      - Cuerpo de texto: Kade Medium (400 → renderizado como 500)
 
-   ⚡ OPTIMIZACIÓN FUTURA:
-      - Convertir OTF → WOFF2 para mejor compresión
-      - Usar herramientas como Font Squirrel o FontTools
+   ⚡ OPTIMIZACIÓN ACTUAL:
+      - Solo 1 archivo OTF en lugar de 3 (67% menos archivos)
+      - CSS mapea todos los pesos al mismo archivo Medium
+      - font-display: swap para carga rápida
 
-   🌐 COBERTURA: 100% de la web usa exclusivamente Kade
+   🌐 COBERTURA: 100% de la web usa exclusivamente Kade Medium
 
    ============================================== */
 
